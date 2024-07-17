@@ -1,6 +1,10 @@
+import ProgressBar from "./ProgressBar"
+
 const Header = () => {
   return (
-    <header>Header</header>
+    <header>
+      <ProgressBar />
+    </header>
   )
 }
 export default Header
