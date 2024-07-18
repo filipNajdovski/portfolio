@@ -100,7 +100,7 @@ section.portfolio {
     "profile-picture title title"
     "summary summary summary"
     "experience experience experience"
-    "experience experience experience"
+    "certificates certificates certificates"
     "education education education";
 }
 
@@ -112,9 +112,14 @@ section.portfolio {
 
 .experience { grid-area: experience; }
 
+.certificates { grid-area: certificates; }
+
 .education { grid-area: education; }
 
+section.keypoints{
+  background: linear-gradient(0deg, rgba(111,93,68,1) 0%, rgba(204,197,183,1) 100%);
+}
 
 section.projects{
-  background: linear-gradient(0deg, rgba(111,93,68,1) 0%, rgba(204,197,183,1) 100%);
+  background: linear-gradient(0deg, rgba(204,197,183,1) 0%, rgba(111,93,68,1) 100%);
 }
