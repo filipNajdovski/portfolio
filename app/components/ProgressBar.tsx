@@ -8,7 +8,8 @@ const ProgressBar = () => {
 
         if (!mainRenderElement) return;
 
-        const handleScroll = (e) => {
+        const handleScroll = (e: Event) => {
+            const target = e.target as HTMLElement;
             let maxTop = 0;
             const sections = document.querySelectorAll('.main-render > section');
             const sectionsCount = sections.length;
@@ -16,7 +17,7 @@ const ProgressBar = () => {
                 maxTop += section.clientHeight;
             });
 
-            const currentTop = e.target.scrollTop;
+            const currentTop = target.scrollTop;
             const surplus = currentTop / (sectionsCount - 1);
             const scrollPercentage = ((currentTop + surplus) / maxTop) * 100;
 

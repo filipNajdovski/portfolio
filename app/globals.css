@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,18 +27,18 @@ body {
   top: 0;
   z-index: 1;
   width: 100%;
-  background-color: #171717;
+  background-color: #FFFFFF;
 }
 
 .progress-container {
   width: 100%;
   height: 8px;
-  background: #171717;
+  background: #FFFFFF;
 }
 
 .progress-bar {
   height: 8px;
-  background: #00E9FF;
+  background: #E5BB89;
   width: 0%;
 }
 
@@ -47,36 +49,48 @@ body {
   overflow-x: hidden;
 }
 
-section {
+section, footer {
   scroll-snap-align: start;
   width: 100vw;
   height: 100vh;
 }
 
 section.intro{
-  background-color: #00E9FF;
+  background: linear-gradient(0deg, rgba(111,93,68,1) 0%, rgba(204,197,183,1) 100%);
+}
+
+.line-1{
+  font-family: "Anonymous Pro", monospace;
+  position: relative;
+  top: 50%;  
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter{
+animation: typewriter 4s steps(44) 1s 1 normal both,
+           blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+from{width: 0;}
+to{width: 15em;}
+}
+@keyframes blinkTextCursor{
+from{border-right-color: rgba(255,255,255,.75);}
+to{border-right-color: transparent;}
 }
 
 section.keypoints {
-  background-color: #171717;
+  background: linear-gradient(0deg, rgba(204,197,183,1) 0%, rgba(111,93,68,1) 100%);
 }
 
-.progress-header {
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  background-color: #171717;
-}
-
-.progress-container {
-  width: 100%;
-  height: 8px;
-  background: #171717;
-}
-
-.progress-bar {
-  height: 8px;
-  background: #00E9FF;
-  width: 0%;
+section.projects{
+  background: linear-gradient(0deg, rgba(111,93,68,1) 0%, rgba(204,197,183,1) 100%);
 }
