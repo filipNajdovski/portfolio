@@ -80,16 +80,40 @@ animation: typewriter 4s steps(44) 1s 1 normal both,
 }
 @keyframes typewriter{
 from{width: 0;}
-to{width: 15em;}
+to{width: 10em;}
 }
 @keyframes blinkTextCursor{
 from{border-right-color: rgba(255,255,255,.75);}
 to{border-right-color: transparent;}
 }
 
-section.keypoints {
+section.portfolio {
   background: linear-gradient(0deg, rgba(204,197,183,1) 0%, rgba(111,93,68,1) 100%);
 }
+
+.portfolio {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "profile-picture title title"
+    "summary summary summary"
+    "experience experience experience"
+    "experience experience experience"
+    "education education education";
+}
+
+.profile-picture { grid-area: profile-picture; }
+
+.title { grid-area: title; }
+
+.summary { grid-area: summary; }
+
+.experience { grid-area: experience; }
+
+.education { grid-area: education; }
+
 
 section.projects{
   background: linear-gradient(0deg, rgba(111,93,68,1) 0%, rgba(204,197,183,1) 100%);
