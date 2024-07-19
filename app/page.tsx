@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HyperGlobe from "./components/HyperGlobe"
 import profilePic from "./../images/filip.jpg"
+import Keypoints from "./components/Keypoints";
 
 export default function Home() {
   return (
@@ -67,6 +68,7 @@ export default function Home() {
         </section>
 
         <section className="keypoints">
+          <Keypoints />
           
         </section>
 
