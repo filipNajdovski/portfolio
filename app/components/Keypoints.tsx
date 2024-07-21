@@ -16,144 +16,27 @@ const Keypoints = () => {
           <li><h3>Testing Automation/Manual</h3></li>
         </ul>
       </div>
-      <div className="tech-icons">
-      <div className="row">
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/nodejs.svg')"}}></div>
+      <div className="tech-icons gap-2 grid">
+        <div className="card-container w-20 h-20 relative">
+          <div className="card w-full h-full absolute">
+            <div className="front-card w-full h-full absolute bg-slate-700">Front</div>
+            <div className="back-card w-full h-full absolute bg-cyan-300">Back</div>
+          </div>
         </div>
-      </div>
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/html.svg')"}}></div>
-        </div>
-      </div>
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/javascript.svg')"}}></div>
-        </div>
-      </div>
-    </div>
 
-    <div className="row">
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/mysql.svg')"}}></div>
+        <div className="card-container w-20 h-20 relative">
+          <div className="card w-full h-full absolute">
+            <div className="front-card w-full h-full absolute bg-slate-700">Front</div>
+            <div className="back-card w-full h-full absolute bg-cyan-300">Back</div>
+          </div>
         </div>
-      </div>
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/css.svg')"}}></div>
-        </div>
-      </div>
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/flutter.svg')"}}></div>
-        </div>
-      </div>
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/drupal.svg')"}}></div>
-        </div>
-      </div>
-    </div>
 
-    <div className="row">
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/postgresql.svg')"}}></div>
+        <div className="card-container w-20 h-20 relative">
+          <div className="card w-full h-full absolute">
+            <div className="front-card w-full h-full absolute bg-slate-700">Front</div>
+            <div className="back-card w-full h-full absolute bg-cyan-300">Back</div>
+          </div>
         </div>
-      </div>
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/php.svg')"}}></div>
-        </div>
-      </div>
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/codeigniter.svg')"}}></div>
-        </div>
-      </div>
-    </div>
-
-    <div className="row">
-      <div className="shape transparent-shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{}}></div>
-        </div>
-      </div>
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/docker.svg')"}}></div>
-        </div>
-      </div>
-      <div className="shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{backgroundImage: "url('/assets/media/images/technologies/svelte.svg')"}}></div>
-        </div>
-      </div>
-      <div className="shape transparent-shape" data-offset=".05">
-        <div className="shape__right"></div>
-        <div className="shape__left"></div>
-        <div className="shape__top"></div>
-        <div className="shape__bottom"></div>
-        <div className="shape__center">
-          <div className="image" style={{}}></div>
-        </div>
-      </div>
-    </div>
       </div>
     </div>
   )
