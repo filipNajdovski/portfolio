@@ -1,3 +1,5 @@
+import Card from "./Card"
+
 const Keypoints = () => {
 
   return (
@@ -17,26 +19,17 @@ const Keypoints = () => {
         </ul>
       </div>
       <div className="tech-icons gap-2 grid">
-        <div className="card-container w-20 h-20 relative">
-          <div className="card w-full h-full absolute">
-            <div className="front-card w-full h-full absolute bg-slate-700">Front</div>
-            <div className="back-card w-full h-full absolute bg-cyan-300">Back</div>
-          </div>
-        </div>
+        <Card />
 
-        <div className="card-container w-20 h-20 relative">
-          <div className="card w-full h-full absolute">
-            <div className="front-card w-full h-full absolute bg-slate-700">Front</div>
-            <div className="back-card w-full h-full absolute bg-cyan-300">Back</div>
-          </div>
-        </div>
+        <Card />
 
-        <div className="card-container w-20 h-20 relative">
-          <div className="card w-full h-full absolute">
-            <div className="front-card w-full h-full absolute bg-slate-700">Front</div>
-            <div className="back-card w-full h-full absolute bg-cyan-300">Back</div>
-          </div>
-        </div>
+        <Card />
+
+        <Card />
+
+        <Card />
+
+        
       </div>
     </div>
   )

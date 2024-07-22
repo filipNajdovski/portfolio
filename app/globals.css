@@ -19,7 +19,7 @@
 }
 
 body {
-  
+  font-family: "Anonymous Pro", monospace;;
 }
 
 .progress-header {
@@ -142,6 +142,24 @@ section.keypoints{
 
 .card:hover {
   transform: rotateY(180deg);
+}
+
+.front-card {
+  background-color: #9ed1c4;
+  border-radius: 25px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-card {
+  background-color: #0d5a47;
+  border-radius: 25px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .front-card, .back-card {
