@@ -1,4 +1,14 @@
+"use client"
+import { useEffect, useState } from 'react';
+
 const HyperGlobe = () => {
+  const [dataState, setDataState] = useState('complete');
+
+  useEffect(() => {
+    // Update to client-side state after mount
+    setDataState('complete');
+  }, []);
+
   return (
     <>
         <hyper-globe
@@ -43,6 +53,8 @@ const HyperGlobe = () => {
             }}
             data-location="27 17.5813"
             data-version="21"
+            data-state={dataState} 
+            className={dataState === 'complete' ? 'complete' : ''}
           >
           </hyper-globe>
     </>
