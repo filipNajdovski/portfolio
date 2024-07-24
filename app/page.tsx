@@ -43,8 +43,8 @@ export default function Home() {
             <ul>
               <li>Web Developer - Freelance</li>
               <li>Front End Developer - Kimicom</li>
-              <li>Quality Control - Taskforce LLC</li>
-              <li>International Project Coordinator - Media Plus Consulting</li>
+              <li>Quality Control / Project Coordinator - Taskforce LLC</li>
+              <li>International Project Coordinator / Business Analyst - Media Plus Consulting</li>
               <li>Marketing Development - Rothstein International</li>
             </ul>
           </div>
@@ -61,7 +61,7 @@ export default function Home() {
           <div className="education">
             <h3>Education</h3>
             <ul>
-              <li>Computer Science and Communications Engineering - Bachelor's Degree</li>
+              <li>UKLO Computer Science and Communications Engineering - Bachelor's Degree</li>
               <li>SOTU Gjorgji Naumov - Technician for Computer Science and Automatics</li>
             </ul>
           </div>
