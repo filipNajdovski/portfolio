@@ -1,0 +1,44 @@
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: inherit;
+    color: #fff;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tab:hover {
+    color:aquamarine
+  }
+  
+  .tab:focus {
+    background-color: #ddd;
+  }
+  
+  .tab.active {
+    background-color: #fff;
+    border-bottom: 2px solid #000;
+    font-weight: bold;
+  }
+  
+  .tabContent {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  
+  .tabPane {
+    /* display: none; */
+  }
+  
+  .tabPane.active {
+    display: block;
+  }
+  

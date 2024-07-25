@@ -12,14 +12,16 @@ const TabComponent = () => {
   return (
     <div>
       <div className={styles.tabs}>
-        <button className={styles.tab} onClick={() => handleTabClick('tab1')}>Tab 1</button>
-        <button className={styles.tab} onClick={() => handleTabClick('tab2')}>Tab 2</button>
-        <button className={styles.tab} onClick={() => handleTabClick('tab3')}>Tab 3</button>
+        <button className={styles.tab} onClick={() => handleTabClick('tab1')}>Front End Technologies</button>
+        <button className={styles.tab} onClick={() => handleTabClick('tab2')}>Back End Technologies</button>
+        <button className={styles.tab} onClick={() => handleTabClick('tab3')}>Web Degin UI/UX</button>
+        <button className={styles.tab} onClick={() => handleTabClick('tab4')}>Testing Automation/Manual</button>
       </div>
       <div className={styles.tabContent}>
-        {activeTab === 'tab1' && <div className={styles.tabPane}>Content for Tab 1</div>}
-        {activeTab === 'tab2' && <div className={styles.tabPane}>Content for Tab 2</div>}
-        {activeTab === 'tab3' && <div className={styles.tabPane}>Content for Tab 3</div>}
+        {activeTab === 'tab1' && <div className={styles.tabPane}>Content for Front End Technologies</div>}
+        {activeTab === 'tab2' && <div className={styles.tabPane}>Content for Back End Technologies</div>}
+        {activeTab === 'tab3' && <div className={styles.tabPane}>Content for Web Degin UI/UX</div>}
+        {activeTab === 'tab4' && <div className={styles.tabPane}>Content for Testing Automation/Manual</div>}
       </div>
     </div>
   );
