@@ -1,4 +1,10 @@
 import Card from "./Card"
+import AppleIcon from './../../images/technologies/apple.svg'
+import HtmlIcon from './../../images/technologies/html.svg'
+import CssIcon from './../../images/technologies/css.svg'
+import GraphqlIcon from './../../images/technologies/graphql.svg'
+import JavaScriptIcon from './../../images/technologies/javascript.svg'
+
 
 const Keypoints = () => {
 
@@ -19,15 +25,30 @@ const Keypoints = () => {
         </ul>
       </div>
       <div className="tech-icons gap-2 grid">
-        <Card />
+        <Card 
+          text='Apple'
+          icon={AppleIcon}
+        />
 
-        <Card />
+        <Card 
+          text='HTML'
+          icon={HtmlIcon}
+        />
 
-        <Card />
+        <Card 
+          text='CSS'
+          icon={CssIcon}
+        />
 
-        <Card />
+        <Card 
+          text='JavaScript'
+          icon={JavaScriptIcon}
+        />
 
-        <Card />
+        <Card 
+          text='GraphQL'
+          icon={GraphqlIcon}
+        />
 
         
       </div>
