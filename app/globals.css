@@ -132,3 +132,138 @@ section.keypoints{
 section.projects{
   background: linear-gradient(0deg, rgba(204,197,183,1) 0%, rgba(111,93,68,1) 100%);
 }
+
+/* Mobile devices */
+@media only screen and (max-width: 480px) {
+
+section.intro{
+  background-color: #616661;
+}
+
+  
+section.portfolio {
+  background-image: url('../images/background/background-mobile-1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* .portfolio {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "profile-picture title title"
+    "summary summary summary"
+    "experience experience experience"
+    "certificates certificates certificates"
+    "education education education";
+} */
+
+.profile-picture { grid-area: profile-picture; }
+
+.title { grid-area: title; }
+
+.summary { grid-area: summary; }
+
+.experience { grid-area: experience; }
+
+.certificates { grid-area: certificates; }
+
+.education { grid-area: education; }
+
+section.keypoints{
+  background-image: url("../images/background/background-mobile-2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tech-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 2fr));
+  gap: 1rem;
+}
+
+
+
+
+section.projects{
+  background-image: url('../images/background/background-mobile-1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+}
+
+/* Tablets or iPad */
+@media only screen and (max-width: 768px) {
+
+  section.intro{
+    background-color: #616661 !important;
+  }
+  
+    
+  section.portfolio {
+    background-image: url('../images/background/background-mobile-1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* .portfolio {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "profile-picture title title"
+      "summary summary summary"
+      "experience experience experience"
+      "certificates certificates certificates"
+      "education education education";
+  } */
+  
+  .profile-picture { grid-area: profile-picture; }
+  
+  .title { grid-area: title; }
+  
+  .summary { grid-area: summary; }
+  
+  .experience { grid-area: experience; }
+  
+  .certificates { grid-area: certificates; }
+  
+  .education { grid-area: education; }
+  
+  section.keypoints{
+    background-image: url("../images/background/background-mobile-2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .tech-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 2fr));
+    gap: 1rem;
+  }
+  
+  
+  
+  
+  section.projects{
+    background-image: url('../images/background/background-mobile-1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+}
+
+/* Laptop or small-size screen */
+@media only screen and (max-width: 1024px) {
+  
+}
