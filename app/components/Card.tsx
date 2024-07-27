@@ -21,16 +21,19 @@ const Card = ({icon, text, altText}: CardProps) => {
   return (
     <div className={`w-20 h-20 relative ${styles.cardContainer}`} onClick={onClick}>
         <div className={`w-full h-full absolute ${styles.card} ${flipped ? styles.flipped : ''}`}>
+            
             <div className={`w-full h-full absolute ${styles.frontCard}`}>
-                {text}
-                </div>
-            <div className={`w-full h-full absolute ${styles.backCard}`}>
                 <Image src={icon}
                     width={100}
                     height={100}
                     alt={altText}
-                />
+                />               
             </div>
+
+            <div className={`w-full h-full absolute ${styles.backCard}`}>
+                {text}
+            </div>
+
         </div>
     </div>
 )

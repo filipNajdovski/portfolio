@@ -7,6 +7,11 @@ import HtmlIcon from './../../images/technologies/html.svg'
 import CssIcon from './../../images/technologies/css.svg'
 import GraphqlIcon from './../../images/technologies/graphql.svg'
 import JavaScriptIcon from './../../images/technologies/javascript.svg'
+import ReactIcon from './../../images/technologies/react.svg'
+import VueIcon from './../../images/technologies/vuejs.svg'
+import TailwindIcon from './../../images/technologies/tailwindcss.svg'
+import TypeScriptIcon from './../../images/technologies/typescript.svg'
+import BootstrapIcon from './../../images/technologies/bootstrap.svg'
 
 const TabComponent = () => {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -27,11 +32,6 @@ const TabComponent = () => {
         {activeTab === 'frontEnd' && 
         <div className={styles.tabPane}>
           <div className="tech-icons gap-2 grid">
-            <Card 
-              text='Apple'
-              icon={AppleIcon}
-              altText='Apple Icon'
-            />
 
             <Card 
               text='HTML'
@@ -52,9 +52,33 @@ const TabComponent = () => {
             />
 
             <Card 
-              text='GraphQL'
-              icon={GraphqlIcon}
-              altText='GraphQL Icon'
+              text='TypeScript'
+              icon={TypeScriptIcon}
+              altText='TypeScript Icon'
+            />
+
+            <Card 
+              text='Tailwind CSS'
+              icon={TailwindIcon}
+              altText='Tailwind CSS Icon'
+            />
+
+            <Card 
+              text='Bootstrap CSS'
+              icon={BootstrapIcon}
+              altText='Bootstrap CSS Icon'
+            />
+
+            <Card 
+              text='React'
+              icon={ReactIcon}
+              altText='React Icon'
+            />
+
+            <Card 
+              text='Vue.js'
+              icon={VueIcon}
+              altText='Vue JS Icon'
             />
           </div>
         </div>

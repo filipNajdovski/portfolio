@@ -29,8 +29,7 @@
   
   .tabContent {
     padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: inherit;
     border-top: none;
   }
   
