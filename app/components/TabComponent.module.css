@@ -14,19 +14,19 @@
   }
   
   .tab:hover {
-    color:aquamarine
+    color: #e5bb89
   }
   
   .tab:focus {
-    background-color: #151515;
-    color:aquamarine
+    background-color: #7e7e7e;
+    color: #e5bb89
   }
   
   .tab.active {
     background-color: #fff;
     border-bottom: 2px solid #000;
     font-weight: bold;
-    color:aquamarine
+    color: #e5bb89
   }
   
   .tabContent {
