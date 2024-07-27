@@ -1,29 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.1.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1"
-	 id="svg12" inkscape:version="1.2.2 (732a01da63, 2022-12-09)" sodipodi:docname="html.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100"
-	 style="enable-background:new 0 0 100 100;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#E44D26;}
-	.st1{fill:#F16529;}
-	.st2{fill:#EBEBEB;}
-	.st3{fill:#FFFFFF;}
-	.st4{enable-background:new    ;}
-</style>
-<sodipodi:namedview  bordercolor="#000000" borderopacity="0.25" id="namedview14" inkscape:current-layer="svg12" inkscape:cx="49.577805" inkscape:cy="78.890229" inkscape:deskcolor="#d1d1d1" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:showpageshadow="2" inkscape:window-height="1009" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="1912" inkscape:window-y="-8" inkscape:zoom="8.29" pagecolor="#ffffff" showgrid="false">
-	</sodipodi:namedview>
-<path id="path2" class="st0" d="M21.8,70.9L15.5,0.4h69l-6.3,70.5L50,78.7L21.8,70.9z"/>
-<path id="path4" class="st1" d="M50,72.7l22.8-6.3l5.4-60.2H50V72.7z"/>
-<path id="path6" class="st2" d="M50,32.3H38.6l-0.8-8.9H50v-8.6H28.3l0.2,2.3L30.7,41H50V32.3z M50,54.8L50,54.8l-9.7-2.6l-0.6-6.9
-	H31l1.2,13.6L50,63.8l0,0V54.8z"/>
-<path id="path10" class="st3" d="M50,32.3V41h10.6l-1,11.2L50,54.8v9l17.7-4.9l0.1-1.5l2-22.8l0.2-2.3h-2.3H50z M50,14.8v8.6h20.9
-	l0.2-1.9l0.4-4.4l0.2-2.3H50z"/>
-<g class="st4">
-	<path d="M26.5,94.8V81.2h2.4v5.6h6v-5.6h2.4v13.6h-2.4V89h-6v5.8H26.5z"/>
-	<path d="M39.1,81.2h10.4v2.2h-4v11.4h-2.4V83.4h-4V81.2z"/>
-	<path d="M51.3,94.8V81.2h2.3L58.1,92l4.4-10.9h2.4v13.6h-2.3v-4.2c0-2.7,0-3.5,0.1-4.5l-3.5,8.7H57l-3.5-8.7
-		c0.1,0.8,0.1,2.1,0.1,3.8v4.9H51.3z"/>
-	<path d="M70.2,92.6h5.7v2.2h-8.1V81.2h2.4V92.6z"/>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 128 128">
+  <path fill="#E44D26" d="M27.854 116.354l-8.043-90.211h88.378l-8.051 90.197-36.192 10.033z"></path><path fill="#F16529" d="M64 118.704l29.244-8.108 6.881-77.076H64z"></path><path fill="#EBEBEB" d="M64 66.978H49.359l-1.01-11.331H64V44.583H36.257l.264 2.969 2.72 30.489H64zm0 28.733l-.049.013-12.321-3.328-.788-8.823H39.735l1.55 17.372 22.664 6.292.051-.015z"></path><path d="M28.034 1.627h5.622v5.556H38.8V1.627h5.623v16.822H38.8v-5.633h-5.143v5.633h-5.623V1.627zm23.782 5.579h-4.95V1.627h15.525v5.579h-4.952v11.243h-5.623V7.206zm13.039-5.579h5.862l3.607 5.911 3.603-5.911h5.865v16.822h-5.601v-8.338l-3.867 5.981h-.098l-3.87-5.981v8.338h-5.502V1.627zm21.736 0h5.624v11.262h7.907v5.561H86.591V1.627z"></path><path fill="#fff" d="M63.962 66.978v11.063h13.624L76.302 92.39l-12.34 3.331v11.51l22.682-6.286.166-1.87 2.6-29.127.27-2.97h-2.982zm0-22.395v11.064h26.725l.221-2.487.505-5.608.265-2.969z"></path>
 </svg>

@@ -9,11 +9,12 @@
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.5s ease;
+    transition: transform 1s ease;
+    cursor: pointer;
 }
 
 .flipped {
-    transform: rotateY(180deg);
+    transform: rotateY(540deg);
   }
   
 /* .card:hover {
@@ -30,7 +31,7 @@ transform: rotateY(180deg);
 }
 
 .backCard {
-    background-color: #0d5a47;
+    background-color: #5B8C00;
     border-radius: 25px;
     padding: 1rem;
     display: flex;

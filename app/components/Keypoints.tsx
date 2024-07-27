@@ -1,9 +1,4 @@
 import Card from "./Card"
-import AppleIcon from './../../images/technologies/apple.svg'
-import HtmlIcon from './../../images/technologies/html.svg'
-import CssIcon from './../../images/technologies/css.svg'
-import GraphqlIcon from './../../images/technologies/graphql.svg'
-import JavaScriptIcon from './../../images/technologies/javascript.svg'
 import TabComponent from "./TabComponent"
 
 
@@ -17,43 +12,39 @@ const Keypoints = () => {
       </div>
       
       <TabComponent />
-
-      <div className="tech-menu">
-        <ul>
-          <li><h3>Front End Technologies</h3></li>
-          <li><h3>Back End Technologies</h3></li>
-          <li><h3>Web Degin UI/UX</h3></li>
-          <li><h3>Testing Automation/Manual</h3></li>
-        </ul>
-      </div>
-      <div className="tech-icons gap-2 grid">
+      {/* <div className="tech-icons gap-2 grid">
         <Card 
           text='Apple'
           icon={AppleIcon}
+          altText='Apple Icon'
         />
 
         <Card 
           text='HTML'
           icon={HtmlIcon}
+          altText='HTML Icon'
         />
 
         <Card 
           text='CSS'
           icon={CssIcon}
+          altText='CSS Icon'
         />
 
         <Card 
           text='JavaScript'
           icon={JavaScriptIcon}
+          altText='JavaScript Icon'
         />
 
         <Card 
           text='GraphQL'
           icon={GraphqlIcon}
+          altText='GraphQL Icon'
         />
 
         
-      </div>
+      </div> */}
     </div>
   )
 }

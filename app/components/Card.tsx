@@ -2,14 +2,14 @@
 import { useState } from "react"
 import styles from './Card.module.css'
 import Image, { StaticImageData } from "next/image"
-import appleIcon from './../../images/technologies/apple.svg'
 
 interface CardProps {
     text: string,
-    icon: StaticImageData
+    icon: StaticImageData,
+    altText: string
 }
 
-const Card = ({icon, text}: CardProps) => {
+const Card = ({icon, text, altText}: CardProps) => {
 
     const [flipped, setFlipped] = useState(false);
 
@@ -28,7 +28,7 @@ const Card = ({icon, text}: CardProps) => {
                 <Image src={icon}
                     width={100}
                     height={100}
-                    alt='Apple Icon'
+                    alt={altText}
                 />
             </div>
         </div>

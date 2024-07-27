@@ -1,6 +1,12 @@
 "use client"
 import { useState } from 'react';
 import styles from './TabComponent.module.css';
+import Card from './Card';
+import AppleIcon from './../../images/technologies/apple.svg'
+import HtmlIcon from './../../images/technologies/html.svg'
+import CssIcon from './../../images/technologies/css.svg'
+import GraphqlIcon from './../../images/technologies/graphql.svg'
+import JavaScriptIcon from './../../images/technologies/javascript.svg'
 
 const TabComponent = () => {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -12,16 +18,152 @@ const TabComponent = () => {
   return (
     <div>
       <div className={styles.tabs}>
-        <button className={styles.tab} onClick={() => handleTabClick('tab1')}>Front End Technologies</button>
-        <button className={styles.tab} onClick={() => handleTabClick('tab2')}>Back End Technologies</button>
-        <button className={styles.tab} onClick={() => handleTabClick('tab3')}>Web Degin UI/UX</button>
-        <button className={styles.tab} onClick={() => handleTabClick('tab4')}>Testing Automation/Manual</button>
+        <button className={styles.tab} onClick={() => handleTabClick('frontEnd')}>Front End Technologies</button>
+        <button className={styles.tab} onClick={() => handleTabClick('backEnd')}>Back End Technologies</button>
+        <button className={styles.tab} onClick={() => handleTabClick('webDesign')}>Web Degin UI/UX</button>
+        <button className={styles.tab} onClick={() => handleTabClick('testubg')}>Testing Automation/Manual</button>
       </div>
       <div className={styles.tabContent}>
-        {activeTab === 'tab1' && <div className={styles.tabPane}>Content for Front End Technologies</div>}
-        {activeTab === 'tab2' && <div className={styles.tabPane}>Content for Back End Technologies</div>}
-        {activeTab === 'tab3' && <div className={styles.tabPane}>Content for Web Degin UI/UX</div>}
-        {activeTab === 'tab4' && <div className={styles.tabPane}>Content for Testing Automation/Manual</div>}
+        {activeTab === 'frontEnd' && 
+        <div className={styles.tabPane}>
+          <div className="tech-icons gap-2 grid">
+            <Card 
+              text='Apple'
+              icon={AppleIcon}
+              altText='Apple Icon'
+            />
+
+            <Card 
+              text='HTML'
+              icon={HtmlIcon}
+              altText='HTML Icon'
+            />
+
+            <Card 
+              text='CSS'
+              icon={CssIcon}
+              altText='CSS Icon'
+            />
+
+            <Card 
+              text='JavaScript'
+              icon={JavaScriptIcon}
+              altText='JavaScript Icon'
+            />
+
+            <Card 
+              text='GraphQL'
+              icon={GraphqlIcon}
+              altText='GraphQL Icon'
+            />
+          </div>
+        </div>
+        }
+        {activeTab === 'backEnd' && 
+          <div className={styles.tabPane}>
+            <div className="tech-icons gap-2 grid">
+              <Card 
+                text='Apple'
+                icon={AppleIcon}
+                altText='Apple Icon'
+              />
+
+              <Card 
+                text='HTML'
+                icon={HtmlIcon}
+                altText='HTML Icon'
+              />
+
+              <Card 
+                text='CSS'
+                icon={CssIcon}
+                altText='CSS Icon'
+              />
+
+              <Card 
+                text='JavaScript'
+                icon={JavaScriptIcon}
+                altText='JavaScript Icon'
+              />
+
+              <Card 
+                text='GraphQL'
+                icon={GraphqlIcon}
+                altText='GraphQL Icon'
+              />
+            </div>
+          </div>
+        }
+        {activeTab === 'webDesign' && 
+          <div className={styles.tabPane}>
+            <div className="tech-icons gap-2 grid">
+              <Card 
+                text='Apple'
+                icon={AppleIcon}
+                altText='Apple Icon'
+              />
+
+              <Card 
+                text='HTML'
+                icon={HtmlIcon}
+                altText='HTML Icon'
+              />
+
+              <Card 
+                text='CSS'
+                icon={CssIcon}
+                altText='CSS Icon'
+              />
+
+              <Card 
+                text='JavaScript'
+                icon={JavaScriptIcon}
+                altText='JavaScript Icon'
+              />
+
+              <Card 
+                text='GraphQL'
+                icon={GraphqlIcon}
+                altText='GraphQL Icon'
+              />
+            </div>
+          </div>
+        }
+        {activeTab === 'testubg' && 
+          <div className={styles.tabPane}>
+            <div className="tech-icons gap-2 grid">
+              <Card 
+                text='Apple'
+                icon={AppleIcon}
+                altText='Apple Icon'
+              />
+
+              <Card 
+                text='HTML'
+                icon={HtmlIcon}
+                altText='HTML Icon'
+              />
+
+              <Card 
+                text='CSS'
+                icon={CssIcon}
+                altText='CSS Icon'
+              />
+
+              <Card 
+                text='JavaScript'
+                icon={JavaScriptIcon}
+                altText='JavaScript Icon'
+              />
+
+              <Card 
+                text='GraphQL'
+                icon={GraphqlIcon}
+                altText='GraphQL Icon'
+              />
+            </div>
+          </div>
+        }
       </div>
     </div>
   );
