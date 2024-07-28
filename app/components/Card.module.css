@@ -35,8 +35,10 @@ transform: rotateY(180deg);
     border-radius: 25px;
     padding: 1rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .frontCard, .backCard {
@@ -48,4 +50,10 @@ transform: rotateY(180deg);
 
 .backCard {
     transform: rotateY(180deg);
+}
+
+.techProgress {
+ width: 100%;
+ height: 20%;
+ border: 1px #9ed1c4 solid;
 }

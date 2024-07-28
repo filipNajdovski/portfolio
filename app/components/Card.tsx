@@ -6,10 +6,11 @@ import Image, { StaticImageData } from "next/image"
 interface CardProps {
     text: string,
     icon: StaticImageData,
-    altText: string
+    altText: string,
+    progress: string
 }
 
-const Card = ({icon, text, altText}: CardProps) => {
+const Card = ({icon, text, altText, progress}: CardProps) => {
 
     const [flipped, setFlipped] = useState(false);
 
@@ -31,7 +32,10 @@ const Card = ({icon, text, altText}: CardProps) => {
             </div>
 
             <div className={`w-full h-full absolute ${styles.backCard}`}>
-                {text}
+                <h3>{text}</h3>
+                <div className={styles.techProgress}>
+                    <div className={`progress bg-[#9ed1c4] h-full w-${progress}`}></div>
+                </div>
             </div>
 
         </div>
