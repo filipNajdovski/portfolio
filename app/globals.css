@@ -56,7 +56,7 @@ section, footer {
 }
 
 section.intro{
-  background: linear-gradient(0deg, rgba(111,93,68,1) 0%, rgba(204,197,183,1) 100%);
+  background-color: #616661;
 }
 
 .line-1{
@@ -88,7 +88,10 @@ to{border-right-color: transparent;}
 }
 
 section.portfolio {
-  background: linear-gradient(0deg, rgba(204,197,183,1) 0%, rgba(111,93,68,1) 100%);
+  background-image: url('../images/background/background-desktop-1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .portfolio {  display: grid;
@@ -117,7 +120,10 @@ section.portfolio {
 .education { grid-area: education; }
 
 section.keypoints{
-  background: linear-gradient(0deg, rgba(111,93,68,1) 0%, rgba(204,197,183,1) 100%);
+  background-image: url('../images/background/background-desktop-2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .tech-icons {
@@ -130,7 +136,10 @@ section.keypoints{
 
 
 section.projects{
-  background: linear-gradient(0deg, rgba(204,197,183,1) 0%, rgba(111,93,68,1) 100%);
+  background-image: url('../images/background/background-desktop-1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Mobile devices */
