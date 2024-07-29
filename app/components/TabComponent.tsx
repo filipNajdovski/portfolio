@@ -63,84 +63,84 @@ const TabComponent = () => {
               text='HTML'
               icon={htmlIcon}
               altText='HTML Icon'
-              progress='1/12'
+              progress='100'
             />
 
             <Card 
               text='CSS'
               icon={cssIcon}
               altText='CSS Icon'
-              progress='1/12'
+              progress='90'
             />
 
             <Card 
               text='JavaScript'
               icon={javaScriptIcon}
               altText='JavaScript Icon'
-              progress='1/12'
+              progress='80'
             />
 
             <Card 
               text='TypeScript'
               icon={typeScriptIcon}
               altText='TypeScript Icon'
-              progress='1/12'
+              progress='80'
             />
 
             <Card 
               text='Tailwind CSS'
               icon={tailwindCssIcon}
               altText='TailwindCSS Icon'
-              progress='1/12'
+              progress='80'
             />
 
             <Card 
               text='Materialize CSS'
               icon={materializeCssIcon}
               altText='MaterializeCSS Icon'
-              progress='1/12'
+              progress='60'
             />
 
             <Card 
               text='Bootstrap CSS'
               icon={bootstrapIcon}
               altText='BootstrapCSS Icon'
-              progress='1/12'
+              progress='60'
             />
 
             <Card 
               text='PostCSS'
               icon={postCssIcon}
               altText='PostCSS Icon'
-              progress='1/12'
+              progress='90'
             />
 
             <Card 
               text='React'
               icon={reactIcon}
               altText='React Icon'
-              progress='1/12'
+              progress='70'
             />
 
             <Card 
               text='NextJS'
               icon={nextJsIcon}
               altText='NextJS Icon'
-              progress='1/12'
+              progress='70'
             />
 
             <Card 
               text='Vue.js'
               icon={vueIcon}
               altText='Vue JS Icon'
-              progress='1/12'
+              progress='50'
             />
 
             <Card 
               text='Angular'
               icon={angularIcon}
               altText='Angular Icon'
-              progress='1/12'
+              progress='50'
             />
           </div>
         </div>
@@ -152,89 +152,89 @@ const TabComponent = () => {
                 text='PHP'
                 icon={phpIcon}
                 altText='PHP Icon'
-                progress='1/12'
+                progress='60'
               />
 
               <Card 
                 text='Node JS'
                 icon={nodeJsIcon}
                 altText='node.js Icon'
-                progress='1/12'
+                progress='60'
               />
 
               <Card 
                 text='Laravel'
                 icon={laravelIcon}
                 altText='Laravel Icon'
-                progress='1/12'
+                progress='60'
               />
 
               <Card 
                 text='CodeIgniter'
                 icon={codeIgniter}
                 altText='CodeIgniter Icon'
-                progress='1/12'
+                progress='50'
               />
 
               <Card 
                 text='GraphQL'
                 icon={graphQlIcon}
                 altText='GraphQL Icon'
-                progress='1/12'
+                progress='70'
               />
 
               <Card 
                 text='Express JS'
                 icon={expressJsIcon}
                 altText='ExpressJS Icon'
-                progress='1/12'
+                progress='70'
               />
 
               <Card 
                 text='npm'
                 icon={npmIcon}
                 altText='NPM Icon'
-                progress='1/12'
+                progress='80'
               />
 
               <Card 
                 text='MySQL'
                 icon={mySqlIcon}
                 altText='MySQL Icon'
-                progress='1/12'
+                progress='80'
               />
 
               <Card 
                 text='PostgreSQL'
                 icon={postgresSqlIcon}
                 altText='PostreSQL Icon'
-                progress='1/12'
+                progress='50'
               />
 
               <Card 
                 text='MariaDB'
                 icon={mariaDbIcon}
                 altText='MariaDB Icon'
-                progress='1/12'
+                progress='80'
               />
 
               <Card 
                 text='MongoDB'
                 icon={mongoDbIcon}
                 altText='MongoDB Icon'
-                progress='1/12'
+                progress='80'
               />
               <Card 
                 text='FireBase'
                 icon={firebaseIcon}
                 altText='FireBase Icon'
-                progress='1/12'
+                progress='70'
               />
               <Card 
                 text='WordPress'
                 icon={wordPressIcon}
                 altText='WordPress Icon'
-                progress='1/12'
+                progress='80'
               />
 
             </div>
@@ -247,28 +247,28 @@ const TabComponent = () => {
                 text='Figma'
                 icon={figma}
                 altText='Figma Icon'
-                progress='1/12'
+                progress='80'
               />
 
               <Card 
                 text='Adobe Photoshop'
                 icon={photoshop}
                 altText='Adobe Photoshop Icon'
-                progress='1/12'
+                progress='60'
               />
 
               <Card 
                 text='Adobe Illustrator'
                 icon={illustrator}
                 altText='Adobe Illustrator Icon'
-                progress='1/12'
+                progress='60'
               />
 
               <Card 
                 text='Adobe After Effects'
                 icon={afterEffectsIcon}
                 altText='Adobe After Effects Icon'
-                progress='1/12'
+                progress='50'
               />
             </div>
           </div>
@@ -280,28 +280,28 @@ const TabComponent = () => {
                 text='Postman'
                 icon={postmanIcon}
                 altText='Postman Icon'
-                progress='1/12'
+                progress='80'
               />
 
               <Card 
                 text='Cypress JS'
                 icon={cypressIcon}
                 altText='CypressIo Icon'
-                progress='1/12'
+                progress='70'
               />
 
               <Card 
                 text='Mocha'
                 icon={mochaIcon}
                 altText='Mocha Icon'
-                progress='1/12'
+                progress='60'
               />
 
               <Card 
                 text='Jest'
                 icon={jestIcon}
                 altText='Jest Icon'
-                progress='1/12'
+                progress='60'
               />
 
             </div>

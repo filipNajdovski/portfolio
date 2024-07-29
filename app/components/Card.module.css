@@ -58,3 +58,8 @@ transform: rotateY(180deg);
  border: 1px #9ed1c4 solid;
 }
 
+.progress {
+    position: absolute;
+    left: 25px;
+    filter: invert(100%)
+}
