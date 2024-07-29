@@ -29,7 +29,7 @@ export default function Home() {
           <div className="summary">
             <h3 className="text-[#e5bb89] text-lg font-bold py-3">About me</h3>
             <p className="text-white text-sm">
-            Passionate and dedicated web developer with two years of professional 
+            Passionate and dedicated web developer with more than two years of professional 
             experience in front-end development, specializing in React.js, with 
             additional proficiency in Angular and Vue.js. Strong background in both 
             software and hardware, continually updating my skills with the latest 
@@ -73,8 +73,17 @@ export default function Home() {
           
         </section>
 
-        <section className="projects">
-            
+        <section className="projects p-8">
+            <div className="testimonials">
+              <h3 className=" text-[#e5bb89] text-2xl font-medium py-3">Testimonials</h3>
+              <p>Over the years, I have had the privilege of working on a diverse range of projects, each one presenting unique challenges and opportunities for growth. My journey as a web developer has been shaped by these experiences, and I am proud to showcase some of the projects that have defined my career. The following testimonials from my clients and collaborators provide insight into the quality of my work, my dedication to excellence, and the positive impact I strive to make through my contributions.</p>
+              <div className="testimonial">
+              
+              </div>
+            </div>
+            <div className="projects">
+              <h3 className=" text-[#e5bb89] text-2xl font-medium py-3">Projects</h3>
+            </div>
         </section>
     </main>
   );

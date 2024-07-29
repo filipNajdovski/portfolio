@@ -40,7 +40,7 @@ import mochaIcon from './../../images/technologies/mocha.svg'
 
 
 const TabComponent = () => {
-  const [activeTab, setActiveTab] = useState('tab1');
+  const [activeTab, setActiveTab] = useState('frontEnd');
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
