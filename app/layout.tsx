@@ -28,7 +28,6 @@ export default function RootLayout({
         <Script
           src={data.globe}
           strategy="lazyOnload"
-          onLoad={() => console.log('Globe has loaded')}
         />
         {/* <script type="module"
           src={data.globe}>
