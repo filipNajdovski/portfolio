@@ -62,7 +62,7 @@ export default function Home() {
           <div className="education">
             <h3 className="text-[#e5bb89] text-lg font-bold py-3">Education</h3>
             <ul className="text-white text-sm">
-              <li>UKLO Computer Science and Communications Engineering - Bachelor's Degree</li>
+              <li>UKLO Computer Science and Communications Engineering - Bachelor&apos;s Degree</li>
               <li>SOTU Gjorgji Naumov - Technician for Computer Science and Automatics</li>
             </ul>
           </div>

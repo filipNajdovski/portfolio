@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Script from "next/script";
 import data from './../data.json'
 
 export const metadata: Metadata = {
@@ -24,9 +25,14 @@ export default function RootLayout({
         
         <Footer />
 
-        <script type="module"
+        <Script
+          src={data.globe}
+          strategy="lazyOnload"
+          onLoad={() => console.log('Globe has loaded')}
+        />
+        {/* <script type="module"
           src={data.globe}>
-        </script>
+        </script> */}
       </body>
     </html>
   );
