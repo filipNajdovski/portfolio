@@ -1,5 +1,8 @@
 "use client"
 import { useEffect, useState } from 'react';
+import Script from 'next/script';
+import globeScript from './../../hyper-globe.min.js'
+
 
 const HyperGlobe = () => {
   const [dataState, setDataState] = useState('complete');
@@ -11,6 +14,9 @@ const HyperGlobe = () => {
 
   return (
     <>
+    <Script 
+        src={globeScript}
+      />
         <hyper-globe
             id="my-globe"
             style={{
@@ -19,10 +25,10 @@ const HyperGlobe = () => {
               maxWidth: "100vw",
               maxHeight: "100vh",
               "--globe-scale": "0.73",
-              "--map-density": "0.75",
-              "--map-height": "0.68",
+              "--map-density": "0.90",
+              "--map-height": "0.75",
               "--point-size": "0.5",
-              "--backside-opacity": "0.24",
+              "--backside-opacity": "0.25",
               "--backside-transition": "1",
               "--marker-size": "1",
               "--title-position": "0 -1",
@@ -41,12 +47,12 @@ const HyperGlobe = () => {
               "--overlay-position": "1 0",
               "--globe-latitude-limit": "30.5",
               "--autorotate": "true",
-              "--autorotate-speed": "0.3",
-              "--autorotate-delay": "1.5",
+              "--autorotate-speed": "0.6",
+              "--autorotate-delay": "0.5",
               "--animation": "position",
               "--animation-intensity": "0.1",
               "--animation-scale": "0.08",
-              "--animation-speed": "0.76",
+              "--animation-speed": "0.80",
               "--marker-offset": "-0.6",
               "--text-color": "#999999",
               "--point-color": "#ffffff"

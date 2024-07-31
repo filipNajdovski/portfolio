@@ -29,9 +29,9 @@ export default function RootLayout({
           src={data.globe}
           strategy="lazyOnload"
         /> */}
-        <script type="module"
+        {/* <script type="module"
           src={data.globe}>
-        </script>
+        </script> */}
       </body>
     </html>
   );
