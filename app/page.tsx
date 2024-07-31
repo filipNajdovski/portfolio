@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HyperGlobe from "./components/HyperGlobe"
+import GlobeComponent from "./components/GlobeComponent"
 import profilePic from "./../images/filip.jpg"
 import Keypoints from "./components/Keypoints";
 
@@ -8,7 +8,7 @@ export default function Home() {
     <main className="main-render">
         <section className="intro">
           <p className="line-1 anim-typewriter">Filip Najdovski</p>
-          <HyperGlobe />
+          <GlobeComponent />
         </section>
 
         <section className="portfolio p-8">

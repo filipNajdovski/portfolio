@@ -4,7 +4,7 @@ import Script from 'next/script';
 import globeScript from './../../hyper-globe.min.js'
 
 
-const HyperGlobe = () => {
+const GlobeComponent = () => {
   const [dataState, setDataState] = useState('complete');
 
   useEffect(() => {
@@ -66,4 +66,4 @@ const HyperGlobe = () => {
     </>
   )
 }
-export default HyperGlobe
+export default GlobeComponent
