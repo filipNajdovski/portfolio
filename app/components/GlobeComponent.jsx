@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
-import publicDirectory from './../../public/hyper-globe-2'
 
 const GlobeComponent = () => {
   const [dataState, setDataState] = useState('complete');
@@ -13,17 +12,17 @@ const GlobeComponent = () => {
 
   return (
     <>
-      <Script 
-        src='./../../public/hyper-globe-2'
+      <Script
+        src="/hyper-globe-2.js"
         strategy="afterInteractive"
-        onLoad={() => {
-          if (typeof window !== 'undefined') {
-            // Ensure custom element is defined after the script is loaded
-            if (!customElements.get('hyper-globe')) {
-              customElements.define('hyper-globe', window.HyperGlobe);
-            }
-          }
-        }}
+        type="module"
+      //   onLoad={() => {
+      //     if (typeof window !== 'undefined' && !customElements.get('hyper-globe')) {
+      //       // Ensure custom element is defined after the script loads
+      //       customElements.define('hyper-globe', window.HyperGlobe);
+      //     }
+      //   }
+      // }
       />
       <hyper-globe
         id="my-globe"
