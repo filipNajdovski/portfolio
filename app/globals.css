@@ -56,21 +56,24 @@ section, footer {
 }
 
 section.intro{
-  background-color: #616661;
+  background-image: url('../images/background/background-desktop-2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .line-1{
-  font-family: "Anonymous Pro", monospace;
-  position: relative;
-  top: 50%;  
-  width: 24em;
-  margin: 0 auto;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  width: 150px;
   border-right: 2px solid rgba(255,255,255,.75);
   font-size: 180%;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
-  transform: translateY(-50%);    
+  transform: translate(-45px, -45px);    
 }
 
 /* Animation */

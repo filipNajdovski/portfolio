@@ -1,13 +1,20 @@
 import Image from "next/image";
 import GlobeComponent from "./components/GlobeComponent"
 import profilePic from "./../images/filip.jpg"
+import logo from "./../images/filip-logo.png"
 import Keypoints from "./components/Keypoints";
 
 export default function Home() {
   return (
     <main className="main-render">
         <section className="intro">
-          <p className="line-1 anim-typewriter">Filip Najdovski</p>
+          <Image
+            src={logo} // Path to your image
+            alt="logo"
+            width={150} // Desired width
+            height={150} // Desired height
+            className="line-1"
+          />
           <GlobeComponent />
         </section>
 
