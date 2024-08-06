@@ -65,31 +65,15 @@ section.intro{
   position: relative;
 }
 
-.line-1{
+.globe-logo{
   position: absolute;
   top: 50vh;
   left: 50vw;
   width: 150px;
-  border-right: 2px solid rgba(255,255,255,.75);
-  font-size: 180%;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   transform: translate(-45px, -45px);    
-}
-
-/* Animation */
-.anim-typewriter{
-animation: typewriter 4s steps(44) 1s 1 normal both,
-           blinkTextCursor 500ms steps(44) infinite normal;
-}
-@keyframes typewriter{
-from{width: 0;}
-to{width: 10em;}
-}
-@keyframes blinkTextCursor{
-from{border-right-color: rgba(255,255,255,.75);}
-to{border-right-color: transparent;}
 }
 
 section.portfolio {
@@ -177,12 +161,13 @@ section.keypoints{
   width: 100%;
 }
 
-section.projects{
+section.clients{
   background-image: url('../images/background/background-desktop-1.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 
 /* Mobile devices */
 @media only screen and (max-width: 480px) {
@@ -237,7 +222,7 @@ section.keypoints{
   gap: 1rem;
 }
 
-section.projects{
+section.clients{
   background-image: url('../images/background/background-mobile-1.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -302,7 +287,7 @@ section.projects{
   
   
   
-  section.projects{
+  section.clients{
     background-image: url('../images/background/background-mobile-1.png');
     background-position: center;
     background-repeat: no-repeat;

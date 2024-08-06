@@ -23,7 +23,7 @@ export default function RootLayout({
 
         {children}
         
-        <Footer />
+        {/* <Footer /> */}
 {/* 
         <Script
           src={data.globe}

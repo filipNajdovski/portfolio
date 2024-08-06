@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
+import Image from 'next/image';
+import logo from "./../../images/filip-logo.png"
 
 const GlobeComponent = () => {
   const [dataState, setDataState] = useState('complete');
@@ -24,15 +26,23 @@ const GlobeComponent = () => {
       //   }
       // }
       />
+      <Image
+            src={logo} // Path to your image
+            alt="logo"
+            width={150} // Desired width
+            height={150} // Desired height
+            className="absolute left-1/2 translate-x-[-75px] top-1/2 translate-y-[-75px]"
+          />
       <hyper-globe
         id="my-globe"
         style={{
           "--preview-color": "#111111",
           margin: "auto",
-          maxWidth: "100vw",
-          maxHeight: "100vh",
-          "--globe-scale": "0.73",
-          "--map-density": "0.90",
+          width: "100vw",
+          height: "100vh",
+          position: "relative",
+          "--globe-scale": "0.85",
+          "--map-density": "0.85",
           "--map-height": "0.75",
           "--point-size": "0.5",
           "--backside-opacity": "0.25",
