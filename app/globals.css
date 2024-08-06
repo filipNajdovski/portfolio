@@ -5,9 +5,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --light-brown: #ad936c;
+  --dark-brown: #62471e;
+  --champagne: #daccb1;
+  --light-gray: #d9ded8;
+  --dark-grey: #182428;
 }
 
 @media (prefers-color-scheme: dark) {
