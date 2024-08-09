@@ -1,6 +1,6 @@
 import Image from "next/image";
 import GlobeComponent from "./components/GlobeComponent"
-import profilePic from "./../images/filip.jpg"
+import profilePic from "./../images/Filip.jpg"
 import Keypoints from "./components/Keypoints";
 import Testimonials from "./components/Testimonials";
 import Projects from "./components/Projects";
