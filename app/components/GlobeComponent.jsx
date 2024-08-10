@@ -39,7 +39,7 @@ const GlobeComponent = () => {
           "--preview-color": "#111111",
           margin: "auto",
           width: "100vw",
-          height: "100vh",
+          height: "70vh",
           position: "relative",
           "--globe-scale": "0.85",
           "--map-density": "0.85",
