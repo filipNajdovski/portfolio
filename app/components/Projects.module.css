@@ -1,9 +1,12 @@
 .projectsScroll {
-display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-snap-points-x: repeat(100%);
-  scroll-snap-align: start;
+    display: flex;
+    /* overflow: auto; */
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-snap-points-x: repeat(100%);
+    scroll-snap-align: start;
+    white-space: nowrap;
+    gap: 25px;
 }
 
 .projectsScroll::-webkit-scrollbar {
