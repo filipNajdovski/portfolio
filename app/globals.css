@@ -176,7 +176,10 @@ section.clients{
 @media only screen and (max-width: 480px) {
 
 section.intro{
-  background-color: #616661;
+  background-image: url('../images/background/background-mobile-1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
   

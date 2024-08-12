@@ -1,0 +1,11 @@
+.projectsScroll {
+display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-snap-points-x: repeat(100%);
+  scroll-snap-align: start;
+}
+
+.projectsScroll::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
