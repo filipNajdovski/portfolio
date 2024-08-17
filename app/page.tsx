@@ -24,13 +24,13 @@ export default function Home() {
           />
           </div>
           <div className="title flex flex-col justify-center gap-2 items-center">
-            <h2 className=" text-[#e5bb89] text-2xl font-medium">Filip Najdovski</h2>
+            <h2 className="lg:text-2xl text-xl font-bold text-[#e5bb89] text-center">Filip Najdovski</h2>
             <br />
-            <h3 className="text-white text-xl font-bold">Front End Developer</h3>
+            <h3 className="text-white text-xl font-bold text-center">Front End Developer</h3>
           </div>
           <div className="summary">
-            <h3 className="text-[#e5bb89] text-lg font-bold py-3">About me</h3>
-            <p className="text-white text-sm">
+            <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">About me</h3>
+            <p className="lg:text-sm text-white text-xs">
             Passionate and dedicated web developer with more than two years of professional 
             experience in front-end development, specializing in React.js, with 
             additional proficiency in Angular and Vue.js. Strong background in both 
@@ -42,8 +42,8 @@ export default function Home() {
             </p>
           </div>
           <div className="experience">
-            <h3 className="text-[#e5bb89] text-lg font-bold py-3">Experience</h3>
-            <ul className="text-white text-sm">
+            <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Experience</h3>
+            <ul className="lg:text-sm text-white text-xs">
               <li>Web Developer - Freelance</li>
               <li>Front End Developer - Kimicom</li>
               <li>Quality Control / Project Coordinator - Taskforce LLC</li>
@@ -52,8 +52,8 @@ export default function Home() {
             </ul>
           </div>
           <div className="certificates">
-            <h3 className="text-[#e5bb89] text-lg font-bold py-3">Certificates</h3>
-            <ul className="text-white text-sm">
+            <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Certificates</h3>
+            <ul className="lg:text-sm text-white text-xs">
               <li>Udemy - React Front to Back</li>
               <li>Udemy - Modern JavaScript From The Beginning (2024)</li>
               <li>Udemy - 20 Web Projects with Vanilla JavaScript</li>
@@ -62,8 +62,8 @@ export default function Home() {
             </ul>
           </div>
           <div className="education">
-            <h3 className="text-[#e5bb89] text-lg font-bold py-3">Education</h3>
-            <ul className="text-white text-sm">
+            <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Education</h3>
+            <ul className="lg:text-sm text-white text-xs">
               <li>UKLO Computer Science and Communications Engineering - Bachelor&apos;s Degree</li>
               <li>SOTU Gjorgji Naumov - Technician for Computer Science and Automatics</li>
             </ul>
