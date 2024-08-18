@@ -67,12 +67,19 @@ transform: rotateY(180deg);
   /* Mobile devices */
   @media only screen and (max-width: 480px) {  
     .cardContainer {
-        width: 90px; /* Adjust size as needed */
-        height: 90px; /* Adjust size as needed */
+        width: 75px; /* Adjust size as needed */
+        height: 75px; /* Adjust size as needed */
         perspective: 1000px;
     }
+
     .frontCard, .backCard {
         padding: 0.75rem;
+    }
+
+    .progress {
+        position: absolute;
+        left: 15px;
+        filter: invert(100%)
     }
   }
   

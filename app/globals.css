@@ -222,7 +222,7 @@ section.keypoints{
 
 .tech-icons {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
   gap: 0.75rem;
 }
 
@@ -287,8 +287,8 @@ section.clients{
   
   .tech-icons {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+    gap: 0.75rem;
   }
   
   
