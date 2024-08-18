@@ -2,7 +2,7 @@
     width: 100px; /* Adjust size as needed */
     height: 100px; /* Adjust size as needed */
     perspective: 1000px;
-  }
+}
   
 .card {
     width: 100%;
@@ -63,3 +63,26 @@ transform: rotateY(180deg);
     left: 25px;
     filter: invert(100%)
 }
+
+  /* Mobile devices */
+  @media only screen and (max-width: 480px) {  
+    .cardContainer {
+        width: 90px; /* Adjust size as needed */
+        height: 90px; /* Adjust size as needed */
+        perspective: 1000px;
+    }
+    .frontCard, .backCard {
+        padding: 0.75rem;
+    }
+  }
+  
+  /* Tablets or iPad */
+  @media only screen and (max-width: 768px) {
+  
+    
+  }
+  
+  /* Laptop or small-size screen */
+  @media only screen and (max-width: 1024px) {
+    
+  }
