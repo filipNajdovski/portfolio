@@ -190,18 +190,16 @@ section.portfolio {
   background-size: cover;
 }
 
-/* .portfolio {  display: grid;
+.portfolio {  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
-  grid-auto-flow: row;
   grid-template-areas:
     "profile-picture title title"
     "summary summary summary"
     "experience experience experience"
     "certificates certificates certificates"
     "education education education";
-} */
+}
 
 .profile-picture { grid-area: profile-picture; }
 
