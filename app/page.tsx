@@ -13,7 +13,7 @@ export default function Home() {
           <GlobeComponent />
         </section>
 
-        <section className="portfolio p-8">
+        <section className="portfolio p-3 lg:p-8">
           <div className="profile-picture flex justify-center items-center">
           <Image
             src={profilePic} // Path to your image

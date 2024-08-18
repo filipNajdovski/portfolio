@@ -1,16 +1,62 @@
 .tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: inherit;
+  color: #fff;
+  border: none;
+  outline: none;
+  transition: background-color 0.4s ease;
+}
+
+.tab:hover {
+  color: #e5bb89
+}
+
+.tab:focus {
+  background-color: #7e7e7e;
+  color: #e5bb89
+}
+
+.tab.active {
+  background-color: #fff;
+  border-bottom: 2px solid #000;
+  font-weight: bold;
+  color: #e5bb89
+}
+
+.tabContent {
+  padding: 20px;
+  background-color: inherit;
+  border-top: none;
+}
+
+.tabPane.active {
+  display: block;
+}
+  
+  /* Mobile devices */
+@media only screen and (max-width: 480px) {
+
+  .tabs {
     display: flex;
     border-bottom: 1px solid #ccc;
   }
   
   .tab {
-    padding: 10px 20px;
+    padding: 5px 5px;
     cursor: pointer;
     background-color: inherit;
     color: #fff;
     border: none;
     outline: none;
     transition: background-color 0.4s ease;
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
   
   .tab:hover {
@@ -30,16 +76,25 @@
   }
   
   .tabContent {
-    padding: 20px;
+    padding: 0.75rem;
     background-color: inherit;
     border-top: none;
-  }
-  
-  .tabPane {
-    /* display: none; */
   }
   
   .tabPane.active {
     display: block;
   }
+
+
+}
+
+/* Tablets or iPad */
+@media only screen and (max-width: 768px) {
+
   
+}
+
+/* Laptop or small-size screen */
+@media only screen and (max-width: 1024px) {
+  
+}
