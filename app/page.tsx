@@ -75,7 +75,7 @@ export default function Home() {
           
         </section>
 
-        <section className="clients p-8">
+        <section className="clients p-3 lg:p-8">
           <Testimonials />
           <Projects />
         </section>
