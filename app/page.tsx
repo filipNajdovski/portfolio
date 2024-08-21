@@ -23,8 +23,8 @@ export default function Home() {
             className="rounded-full border-4 drop-shadow-xl "
           />
           </div>
-          <div className="title flex flex-col justify-center gap-2 items-center">
-            <h2 className="lg:text-2xl text-xl font-bold text-[#e5bb89] text-center">Filip Najdovski</h2>
+          <div className="lg:items-start title flex flex-col justify-center gap-2 items-center">
+            <h2 className="lg:text-2xl lg:text-left text-xl text-center font-bold text-[#e5bb89] ">Filip Najdovski</h2>
             <br />
             <h3 className="text-white text-xl font-bold text-center">Front End Developer</h3>
           </div>
