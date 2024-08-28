@@ -88,34 +88,6 @@ const TabComponent = () => {
             />
 
             <Card 
-              text='Tailwind CSS'
-              icon={tailwindCssIcon}
-              altText='TailwindCSS Icon'
-              progress='80'
-            />
-
-            <Card 
-              text='Materialize CSS'
-              icon={materializeCssIcon}
-              altText='MaterializeCSS Icon'
-              progress='60'
-            />
-
-            <Card 
-              text='Bootstrap CSS'
-              icon={bootstrapIcon}
-              altText='BootstrapCSS Icon'
-              progress='60'
-            />
-
-            <Card 
-              text='PostCSS'
-              icon={postCssIcon}
-              altText='PostCSS Icon'
-              progress='90'
-            />
-
-            <Card 
               text='React'
               icon={reactIcon}
               altText='React Icon'
@@ -141,6 +113,34 @@ const TabComponent = () => {
               icon={angularIcon}
               altText='Angular Icon'
               progress='50'
+            />
+
+            <Card 
+              text='Tailwind CSS'
+              icon={tailwindCssIcon}
+              altText='TailwindCSS Icon'
+              progress='80'
+            />
+
+            <Card 
+              text='Materialize CSS'
+              icon={materializeCssIcon}
+              altText='MaterializeCSS Icon'
+              progress='60'
+            />
+
+            <Card 
+              text='Bootstrap CSS'
+              icon={bootstrapIcon}
+              altText='BootstrapCSS Icon'
+              progress='60'
+            />
+
+            <Card 
+              text='PostCSS'
+              icon={postCssIcon}
+              altText='PostCSS Icon'
+              progress='90'
             />
           </div>
         </div>
