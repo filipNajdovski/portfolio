@@ -58,7 +58,7 @@ section, footer {
 }
 
 section.intro{
-  background-image: url('../images/background/background-desktop-2.png');
+  background-image: url('../images/background/background-blue-tech-desktop-01.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -80,7 +80,7 @@ section.intro{
 }
 
 section.portfolio {
-  background-image: url('../images/background/background-desktop-1.png');
+  background-image: url('../images/background/background-blue-tech-desktop-01.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -112,7 +112,7 @@ section.portfolio {
 .education { grid-area: education; }
 
 section.keypoints{
-  background-image: url('../images/background/background-desktop-2.png');
+  background-image: url('../images/background/background-blue-tech-desktop-01.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -165,7 +165,7 @@ section.keypoints{
 }
 
 section.clients{
-  background-image: url('../images/background/background-desktop-1.png');
+  background-image: url('../images/background/background-blue-tech-desktop-01.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
