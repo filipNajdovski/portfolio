@@ -80,7 +80,7 @@ section.intro{
 }
 
 section.portfolio {
-  background-image: url('../images/background/background-blue-tech-desktop-01.png');
+  background-image: url('../images/background/background-blue-tech-desktop-01-flipped.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -165,7 +165,7 @@ section.keypoints{
 }
 
 section.clients{
-  background-image: url('../images/background/background-blue-tech-desktop-01.png');
+  background-image: url('../images/background/background-blue-tech-desktop-01-flipped.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -176,7 +176,7 @@ section.clients{
 @media only screen and (max-width: 480px) {
 
 section.intro{
-  background-image: url('../images/background/background-mobile-2.png');
+  background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -184,7 +184,7 @@ section.intro{
 
   
 section.portfolio {
-  background-image: url('../images/background/background-mobile-1.png');
+  background-image: url('../images/background/background-blue-tech-mobile-01.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -214,7 +214,7 @@ section.portfolio {
 .education { grid-area: education; }
 
 section.keypoints{
-  background-image: url("../images/background/background-mobile-2.png");
+  background-image: url("../images/background/background-blue-tech-mobile-01-flipped.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -227,7 +227,7 @@ section.keypoints{
 }
 
 section.clients{
-  background-image: url('../images/background/background-mobile-1.png');
+  background-image: url('../images/background/background-blue-tech-mobile-01.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -239,7 +239,7 @@ section.clients{
 @media only screen and (max-width: 768px) {
 
   section.intro{
-    background-image: url('../images/background/background-mobile-2.png');
+    background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -247,7 +247,7 @@ section.clients{
   
     
   section.portfolio {
-    background-image: url('../images/background/background-mobile-1.png');
+    background-image: url('../images/background/background-blue-tech-mobile-01.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -279,7 +279,7 @@ section.clients{
   .education { grid-area: education; }
   
   section.keypoints{
-    background-image: url("../images/background/background-mobile-2.png");
+    background-image: url("../images/background/background-blue-tech-mobile-01-flipped.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -295,7 +295,7 @@ section.clients{
   
   
   section.clients{
-    background-image: url('../images/background/background-mobile-1.png');
+    background-image: url('../images/background/background-blue-tech-mobile-01.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
