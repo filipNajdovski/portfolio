@@ -51,8 +51,8 @@ const TabComponent = () => {
       <div className={styles.tabs}>
         <button className={styles.tab} onClick={() => handleTabClick('frontEnd')}>Front End Technologies</button>
         <button className={styles.tab} onClick={() => handleTabClick('backEnd')}>Back End Technologies</button>
-        <button className={styles.tab} onClick={() => handleTabClick('webDesign')}>Web Degin UI/UX</button>
-        <button className={styles.tab} onClick={() => handleTabClick('testing')}>Testing Automation/Manual</button>
+        <button className={styles.tab} onClick={() => handleTabClick('webDesign')}>Web Degin UI / UX</button>
+        <button className={styles.tab} onClick={() => handleTabClick('testing')}>Testing Automation / Manual</button>
       </div>
       <div className={styles.tabContent}>
         {activeTab === 'frontEnd' && 
