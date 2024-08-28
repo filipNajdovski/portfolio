@@ -80,6 +80,19 @@ const GlobeComponent = () => {
         className={dataState === 'complete' ? 'complete' : ''}
       >
       </hyper-globe>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          #my-globe {
+            height: "50vh"
+          }
+        }
+
+        @media (max-width: 480px) {
+          #my-globe {
+            height: "50vh"
+          }
+        }
+      `}</style>
     </>
   );
 }

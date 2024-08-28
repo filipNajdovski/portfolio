@@ -73,6 +73,10 @@ section.intro{
   justify-content: center;
 }
 
+#my-globe{
+  height: 70vh;
+}
+
 .globe-logo{
   position: absolute;
   top: 50vh;
@@ -187,6 +191,9 @@ section.intro{
   background-size: cover;
 }
 
+#my-globe{
+  height: 53vh !important;
+}
   
 section.portfolio {
   background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
@@ -249,7 +256,10 @@ section.clients{
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
+
+  #my-globe{
+    height: 53vh !important;
+  }  
     
   section.portfolio {
     background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
