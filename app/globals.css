@@ -256,6 +256,12 @@ section.clients{
 /* Tablets or iPad */
 @media only screen and (max-width: 768px) {
 
+  section {
+    scroll-snap-align: start;
+    width: 100dvw;
+    height: 100dvh;
+  }
+
   section.intro{
     background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
     background-position: center;
