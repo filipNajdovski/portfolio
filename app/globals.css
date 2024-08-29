@@ -186,8 +186,8 @@ section.clients{
 
   section {
     scroll-snap-align: start;
-    width: 100dvw;
-    height: 101vh;
+    width: 100vw;
+    height: 100vh;
   }
 
 section.intro{
@@ -258,8 +258,8 @@ section.clients{
 
   section {
     scroll-snap-align: start;
-    width: 100dvw;
-    height: 101vh;
+    width: 100vw;
+    height: 100vh;
   }
 
   section.intro{
