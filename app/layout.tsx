@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header";
+import { Suspense } from "react";
 import Footer from "./components/Footer";
 import Script from "next/script";
 import data from './../data.json'
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "Filip Najdovski - Building Dynamic Websites",
@@ -20,8 +22,10 @@ export default function RootLayout({
       <body>
 
         <Header />
-
-        {children}
+        
+        <Suspense fallback={<p>Loading...</p>}>
+          {children}
+        </Suspense>
         
         {/* <Footer /> */}
 {/* 
