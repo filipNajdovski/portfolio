@@ -2,17 +2,20 @@ import Image, { StaticImageData } from "next/image"
 
 interface ProjectProps {
   image: StaticImageData,
-  altText: string
+  altText: string,
+  link: string
 }
 
 
-const Project = ({image, altText}: ProjectProps) => {
+const Project = ({image, altText, link}: ProjectProps) => {
   return (
     <div className="project aspect-video min-w-80">
-        <Image 
-            src={image}
-            alt={altText}
-        />
+        <a href={link}>
+          <Image 
+              src={image}
+              alt={altText}
+          />
+        </a>
     </div>
   )
 }
