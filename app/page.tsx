@@ -31,14 +31,7 @@ export default function Home() {
           <div className="summary">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">About me</h3>
             <p className="lg:text-sm text-white text-xs">
-            Passionate and dedicated web developer with more than two years of professional 
-            experience in front-end development, specializing in React.js, with 
-            additional proficiency in Angular and Vue.js. Strong background in both 
-            software and hardware, continually updating my skills with the latest 
-            technologies and development principles. Experienced in backend technol
-            ogies including PHP and Node.js. Eager to contribute to and grow with a 
-            forward-thinking company that embraces cutting-edge coding practices 
-            and technologies.
+              My passion and expertise honed over the years have made me highly skilled in crafting exceptional digital experiences. I specialize in designing and developing a wide range of projects, from simple yet elegant websites to complex, feature-rich web and mobile applications. Whether working independently or as part of a team, I take pride in delivering tailored solutions that combine functionality, aesthetics, and seamless performance.
             </p>
           </div>
           <div className="experience">
