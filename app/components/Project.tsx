@@ -1,12 +1,17 @@
-import Image from "next/image"
-import nurReinigung from './../../images/projects/nur-reinigung.png'
+import Image, { StaticImageData } from "next/image"
 
-const Project = () => {
+interface ProjectProps {
+  image: StaticImageData,
+  altText: string
+}
+
+
+const Project = ({image, altText}: ProjectProps) => {
   return (
     <div className="project aspect-video min-w-80">
         <Image 
-            src={nurReinigung}
-            alt='NUR Reinigung'
+            src={image}
+            alt={altText}
         />
     </div>
   )
