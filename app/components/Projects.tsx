@@ -2,6 +2,7 @@ import Project from './Project'
 import styles from './Projects.module.css'
 import nurReinigung from './../../images/projects/nur-reinigung.png'
 import nedvizniniOnline from './../../images/projects/nedviznini.online.screen.png'
+import githubFinder from './../../images/projects/github-finder.png'
 
 
 const Projects = () => {
@@ -11,7 +12,7 @@ const Projects = () => {
         <div className={styles.projectsScroll}>
           <Project image={nurReinigung} altText='Nur Reinigung' link='https://nur-reinigung.ch/'/>
           <Project image={nedvizniniOnline} altText='Nedviznini Online' link='https://www.nedviznini.online/' />
-          <Project image={nurReinigung} altText='Nur Reinigung' link='https://nur-reinigung.ch/' />
+          <Project image={githubFinder} altText='Nur Reinigung' link='https://github-finder-xv5g.vercel.app/' />
         </div>
     </div>
   )
