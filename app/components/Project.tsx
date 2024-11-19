@@ -10,7 +10,7 @@ interface ProjectProps {
 const Project = ({image, altText, link}: ProjectProps) => {
   return (
     <div className="project aspect-video min-w-80">
-        <a href={link}>
+        <a href={link} target="_blank">
           <Image 
               src={image}
               alt={altText}
