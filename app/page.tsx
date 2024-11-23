@@ -14,51 +14,73 @@ export default function Home() {
         </section>
 
         <section className="portfolio p-3 lg:p-8">
+          {/* Profile Picture */}
           <div className="profile-picture flex justify-center items-center">
-          <Image
-            src={profilePic} // Path to your image
-            alt="Filip Najdovski Picture"
-            width={150} // Desired width
-            height={150} // Desired height
-            className="rounded-full border-4 drop-shadow-xl "
-          />
+            <Image
+              src={profilePic} // Path to your image
+              alt="Filip Najdovski Picture"
+              width={150} // Desired width
+              height={150} // Desired height
+              className="rounded-full border-4 drop-shadow-xl"
+            />
           </div>
+
+          {/* Title Section */}
           <div className="title flex flex-col justify-center gap-2 items-center">
-            <h2 className="lg:text-2xl lg:text-left text-xl text-center font-bold text-[#e5bb89] ">Filip Najdovski</h2>
-            <br />
-            <h3 className="text-white text-xl font-bold text-center">Front End Developer</h3>
+            <h1 className="lg:text-3xl text-2xl font-bold text-[#e5bb89] text-center">
+              Filip Najdovski
+            </h1>
+            <h2 className="text-xl text-white font-semibold text-center">
+              Front End Developer & Web Consultant
+            </h2>
           </div>
+
+          {/* About Me Section */}
           <div className="summary">
-            <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">About me</h3>
-            <p className="lg:text-sm text-white text-xs">
-              My passion and expertise honed over the years have made me highly skilled in crafting exceptional digital experiences. I specialize in designing and developing a wide range of projects, from simple yet elegant websites to complex, feature-rich web and mobile applications. Whether working independently or as part of a team, I take pride in delivering tailored solutions that combine functionality, aesthetics, and seamless performance.
+            <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">About Me</h3>
+            <p className="lg:text-base text-sm text-gray-300">
+              I specialize in crafting modern web apps and websites that combine
+              functionality, aesthetics, and seamless performance. Whether you need an
+              elegant portfolio or a feature-rich business application, I bring a
+              user-centered approach and cutting-edge technologies to deliver tailored
+              solutions.
             </p>
           </div>
+
+          {/* Experience Section */}
           <div className="experience">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Experience</h3>
-            <ul className="lg:text-sm text-white text-xs">
-              <li>Web Developer - Freelance</li>
-              <li>Front End Developer - Kimicom</li>
-              <li>Quality Control / Project Coordinator - Taskforce LLC</li>
-              <li>International Project Coordinator / Business Analyst - Media Plus Consulting</li>
-              <li>Marketing Development - Rothstein International</li>
+            <ul className="lg:text-base text-sm text-gray-300 space-y-2">
+              <li><strong>Web Developer</strong> – Freelance</li>
+              <li><strong>Front End Developer</strong> – Kimicom</li>
+              <li><strong>Quality Control / Project Coordinator</strong> – Taskforce LLC</li>
+              <li><strong>International Project Coordinator / Business Analyst</strong> – Media Plus Consulting</li>
+              <li><strong>Marketing Development</strong> – Rothstein International</li>
             </ul>
           </div>
+
+          {/* Certificates Section */}
           <div className="certificates">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Certificates</h3>
-            <ul className="lg:text-sm text-white text-xs">
-              <li>Udemy - React Front to Back</li>
-              <li>Udemy - Modern JavaScript From The Beginning (2024)</li>
-              <li>Udemy - 20 Web Projects with Vanilla JavaScript</li>
-              <li>Codecademy - Full Web Development Path</li>
-              <li>Codecademy - Object Oriented Programming/PHP</li>
+            <ul className="lg:text-base text-sm text-gray-300 space-y-2">
+              <li>React Front to Back – Udemy</li>
+              <li>Modern JavaScript From The Beginning (2024) – Udemy</li>
+              <li>20 Web Projects with Vanilla JavaScript – Udemy</li>
+              <li>Full Web Development Path – Codecademy</li>
+              <li>Object Oriented Programming/PHP – Codecademy</li>
             </ul>
           </div>
+
+          {/* Education Section */}
           <div className="education">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Education</h3>
-            <ul className="lg:text-sm text-white text-xs">
-              <li>UKLO Computer Science and Communications Engineering - Bachelor&apos;s Degree</li>
-              <li>SOTU Gjorgji Naumov - Technician for Computer Science and Automatics</li>
+            <ul className="lg:text-base text-sm text-gray-300 space-y-2">
+              <li>
+                <strong>UKLO Computer Science and Communications Engineering</strong> – Bachelor&apos;s Degree
+              </li>
+              <li>
+                <strong>SOTU Gjorgji Naumov</strong> – Technician for Computer Science and Automatics
+              </li>
             </ul>
           </div>
         </section>
