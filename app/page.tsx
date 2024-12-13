@@ -38,7 +38,7 @@ export default function Home() {
           {/* About Me Section */}
           <div className="summary">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">About Me</h3>
-            <p className="lg:text-base text-sm text-gray-300">
+            <p className="lg:text-base text-xs text-gray-300">
               I specialize in crafting modern web apps and websites that combine
               functionality, aesthetics, and seamless performance. Whether you need an
               elegant portfolio or a feature-rich business application, I bring a
@@ -50,7 +50,7 @@ export default function Home() {
           {/* Experience Section */}
           <div className="experience">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Experience</h3>
-            <ul className="lg:text-base text-sm text-gray-300 space-y-2">
+            <ul className="lg:text-base text-xs text-gray-300 space-y-2">
               <li><strong>Web Developer</strong> – Freelance</li>
               <li><strong>Front End Developer</strong> – Kimicom</li>
               <li><strong>Quality Control / Project Coordinator</strong> – Taskforce LLC</li>
@@ -62,7 +62,7 @@ export default function Home() {
           {/* Certificates Section */}
           <div className="certificates">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Certificates</h3>
-            <ul className="lg:text-base text-sm text-gray-300 space-y-2">
+            <ul className="lg:text-base text-xs text-gray-300 space-y-2">
               <li>React Front to Back – Udemy</li>
               <li>Modern JavaScript From The Beginning (2024) – Udemy</li>
               <li>20 Web Projects with Vanilla JavaScript – Udemy</li>
@@ -74,7 +74,7 @@ export default function Home() {
           {/* Education Section */}
           <div className="education">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Education</h3>
-            <ul className="lg:text-base text-sm text-gray-300 space-y-2">
+            <ul className="lg:text-base text-xs text-gray-300 space-y-2">
               <li>
                 <strong>UKLO Computer Science and Communications Engineering</strong> – Bachelor&apos;s Degree
               </li>
