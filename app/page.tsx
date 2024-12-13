@@ -38,7 +38,7 @@ export default function Home() {
           {/* About Me Section */}
           <div className="summary">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">About Me</h3>
-            <p className="lg:text-base text-xs text-gray-300">
+            <p className="lg:text-base text-xs text-white bg-slate-900/[0.6] p-1 rounded-md shadow-md">
               I specialize in crafting modern web apps and websites that combine
               functionality, aesthetics, and seamless performance. Whether you need an
               elegant portfolio or a feature-rich business application, I bring a
