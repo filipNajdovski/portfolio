@@ -215,8 +215,8 @@ section.portfolio {
     "profile-picture title title"
     "summary summary summary"
     "experience experience experience"
-    "certificates certificates certificates"
-    "education education education";
+    "education education education"
+    "certificates certificates certificates";
 }
 
 .profile-picture { grid-area: profile-picture; }
