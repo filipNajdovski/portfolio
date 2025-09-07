@@ -4,6 +4,7 @@ import profilePic from "./../images/Filip.jpg"
 import Keypoints from "./components/Keypoints";
 import Testimonials from "./components/Testimonials";
 import Projects from "./components/Projects";
+import DownloadButton from "./components/DownloadButton";
 
 export default function Home() {
   return (
@@ -39,23 +40,27 @@ export default function Home() {
           <div className="summary">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">About Me</h3>
             <p className="lg:text-base text-xs text-white bg-slate-900/[0.6] p-1 rounded-md shadow-md">
-              I specialize in crafting modern web apps and websites that combine
-              functionality, aesthetics, and seamless performance. Whether you need an
-              elegant portfolio or a feature-rich business application, I bring a
-              user-centered approach and cutting-edge technologies to deliver tailored
+              Full-Stack JavaScript Developer with 4+ years of experience building
+              scalable web applications using React, Next.js, Vue.js, Node.js, and modern
+              databases SQL & NoSQL. Skilled in designing, developing, testing, and
+              deploying applications with a strong focus on clean code and performance
+              optimization. Experienced in API development/integration and automation
+              testing. Passionate about continuous learning and delivering high-quality
               solutions.
             </p>
+            <DownloadButton />
           </div>
 
           {/* Experience Section */}
           <div className="experience">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Experience</h3>
             <ul className="lg:text-base text-xs text-gray-300 space-y-2">
+              <li><strong>Full Stack Developer</strong> – Innovio Web Consulting</li>
               <li><strong>Web Developer</strong> – Freelance</li>
               <li><strong>Front End Developer</strong> – Kimicom</li>
               <li><strong>Quality Control / Project Coordinator</strong> – Taskforce LLC</li>
-              <li><strong>International Project Coordinator / Business Analyst</strong> – Media Plus Consulting</li>
-              <li><strong>Marketing Development</strong> – Rothstein International</li>
+              {/* <li><strong>International Project Coordinator / Business Analyst</strong> – Media Plus Consulting</li> */}
+              {/* <li><strong>Marketing Development</strong> – Rothstein International</li> */}
             </ul>
           </div>
 
@@ -91,7 +96,7 @@ export default function Home() {
         </section>
 
         <section className="clients p-3 lg:p-8">
-          <Testimonials />
+          {/* <Testimonials /> */}
           <Projects />
         </section>
     </main>
