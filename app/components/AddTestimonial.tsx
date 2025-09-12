@@ -3,15 +3,10 @@ import { useState } from "react"
 import { db } from "../../firebaseConfig"
 import { collection, addDoc } from "firebase/firestore"
 
-type TestimonialProps = {
-  name: string,
-  company: string,
-  companyPhoto: string,
-  feedback: string
-}
+type AddTestimonialProps = {};
 
 
-function AddTestimonial({name, feedback }: TestimonialProps) {
+function AddTestimonial(props: AddTestimonialProps) {
   const [form, setForm] = useState({
     name:"",
     company:"",
