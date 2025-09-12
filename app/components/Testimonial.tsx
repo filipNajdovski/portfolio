@@ -18,7 +18,7 @@ type TestimonialData = {
 
 function Testimonial() {
   const [testimonials, setTestimonials] = useState<(TestimonialData & { id: string })[]>([]);
-  const DEFAULT_PHOTO = "/images/default-reviw.png";
+  // const DEFAULT_PHOTO = "/images/default-reviw.png";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,9 +54,11 @@ function Testimonial() {
         onSwiper={(swiper) => console.log(swiper)}
       >
         {testimonials.map((t) => {
-          const photoSrc = t.companyPhoto
-            ? `/images/${t.companyPhoto}`
-            : DEFAULT_PHOTO;
+          const photoSrc = t.companyPhoto?.startsWith("/images/")
+            ? t.companyPhoto // already a valid path from Firestore
+            : t.companyPhoto
+              ? `/images/${t.companyPhoto}` // handle case where you only stored filename
+              : "/images/default-review.png"; 
 
           return (
             <SwiperSlide key={t.id}>
