@@ -13,7 +13,7 @@ function AddTestimonial() {
   });
   const [message, setMessage] = useState("");
 
-  const DEFAULT_PHOTO = "/images/default-review";
+  const DEFAULT_PHOTO = "/images/default-review.png";
 
   const handleChange = (e: any) => {
     setForm({

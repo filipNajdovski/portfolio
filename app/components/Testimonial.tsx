@@ -4,7 +4,10 @@ import star from "./../../images/icons/star.svg";
 import { db } from '@/firebaseConfig';
 import { collection, getDocs, QueryDocumentSnapshot, DocumentData } from "firebase/firestore";
 import { useEffect, useState } from 'react';
-import { SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css'; // Core Swiper styles
+import 'swiper/css/navigation'; // Example: Navigation module styles
+import 'swiper/css/pagination'; // Example: Pagination module styles
 
 type TestimonialData = {
   name: string
@@ -15,6 +18,7 @@ type TestimonialData = {
 
 function Testimonial() {
   const [testimonials, setTestimonials] = useState<(TestimonialData & { id: string })[]>([]);
+  const DEFAULT_PHOTO = "/images/default-reviw.png";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,47 +42,56 @@ function Testimonial() {
 
   return (
     <>
-      {testimonials.map((t) => {
-        // Determine image path: use companyPhoto if valid, else fallback
-        const photoSrc = t.companyPhoto
-          ? `/images/${t.companyPhoto}` // for local testing
-          : "/images/default-review.png";
+      <Swiper
+        spaceBetween={50}
+        loop={false}
+        breakpoints={{
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        {testimonials.map((t) => {
+          const photoSrc = t.companyPhoto
+            ? `/images/${t.companyPhoto}`
+            : DEFAULT_PHOTO;
 
-        return (
-          <SwiperSlide>
-            <div key={t.id} className="card-wrapper swiper-wrapper">
-            <div className="card-slider swiper-slide">
-              <div className={styles.imageContent}>
-                <span className={styles.overlay}></span>
+          return (
+            <SwiperSlide key={t.id}>
+              <div className="card-slider">
+                <div className={styles.imageContent}>
+                  <span className={styles.overlay}></span>
 
-                <div className={styles.cardImage}>
-                  <Image
-                    src={photoSrc}
-                    alt={"Testimonial Company Photo Filip Najdovski Web development"}
-                    width={150}
-                    height={150}
-                    className="rounded-full border-4 drop-shadow-xl"
-                  />
+                  <div className={styles.cardImage}>
+                    <Image
+                      src={photoSrc}
+                      alt={"Testimonial Company Photo Filip Najdovski Web development"}
+                      width={150}
+                      height={150}
+                      className="rounded-full border-4 drop-shadow-xl"
+                    />
+                  </div>
+                </div>
+
+                <div className={styles.cardContent}>
+                  <span className={styles.contentOverlay}></span>
+                  <h2 className={styles.name}>{t.name}</h2>
+                  <div className="stars inline-flex">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i}>
+                        <Image src={star} width={15} height={15} alt={"star"} />
+                      </span>
+                    ))}
+                  </div>
+                  <p className={styles.description}>{t.feedback}</p>
                 </div>
               </div>
-
-              <div className={styles.cardContent}>
-                <span className={styles.contentOverlay}></span>
-                <h2 className={styles.name}>{t.name}</h2>
-                <div className="stars inline-flex">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>
-                      <Image src={star} width={15} height={15} alt={"star"} />
-                    </span>
-                  ))}
-                </div>
-                <p className={styles.description}>{t.feedback}</p>
-              </div>
-            </div>
-          </div>
-          </SwiperSlide>
-        );
-      })}
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
     </>
   );
 }
