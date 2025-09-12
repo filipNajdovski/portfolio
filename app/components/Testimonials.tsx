@@ -13,6 +13,7 @@ const Testimonials = () => {
         <div className="testimonial">
           <Swiper 
             spaceBetween={50}
+            loop={false}
             breakpoints={{
               0: {          // mobile
                 slidesPerView: 1,

@@ -5,6 +5,7 @@ import Keypoints from "./components/Keypoints";
 import Testimonials from "./components/Testimonials";
 import Projects from "./components/Projects";
 import DownloadButton from "./components/DownloadButton";
+import AddTestimonial from "./components/AddTestimonial";
 
 export default function Home() {
   return (
@@ -96,7 +97,11 @@ export default function Home() {
         </section>
 
         <section className="clients p-3 lg:p-8">
-          {/* <Testimonials /> */}
+          <AddTestimonial />
+        </section>
+
+        <section className="clients p-3 lg:p-8">
+          <Testimonials />
           <Projects />
         </section>
     </main>
