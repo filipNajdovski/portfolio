@@ -31,18 +31,6 @@ const Testimonials = () => {
             <SwiperSlide>
               <Testimonial />
             </SwiperSlide>
-
-            <SwiperSlide>
-              <Testimonial />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <Testimonial />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <Testimonial />
-            </SwiperSlide>
           </Swiper>
         </div>
     </div>
