@@ -96,13 +96,13 @@ export default function Home() {
           
         </section>
 
-        <section className="clients p-3 lg:p-8">
-          <AddTestimonial />
+        <section className="clients p-3 lg:p-8">          
+          <Projects />
         </section>
 
         <section className="clients p-3 lg:p-8">
           <Testimonials />
-          <Projects />
+          <AddTestimonial />
         </section>
     </main>
   );
