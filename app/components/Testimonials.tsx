@@ -28,9 +28,7 @@ const Testimonials = () => {
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)}
           >
-            <SwiperSlide>
-              <Testimonial />
-            </SwiperSlide>
+            <Testimonial />
           </Swiper>
         </div>
     </div>

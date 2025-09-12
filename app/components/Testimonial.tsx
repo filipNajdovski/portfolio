@@ -4,6 +4,7 @@ import star from "./../../images/icons/star.svg";
 import { db } from '@/firebaseConfig';
 import { collection, getDocs, QueryDocumentSnapshot, DocumentData } from "firebase/firestore";
 import { useEffect, useState } from 'react';
+import { SwiperSlide } from 'swiper/react';
 
 type TestimonialData = {
   name: string
@@ -44,7 +45,8 @@ function Testimonial() {
           : "/images/default-review.png";
 
         return (
-          <div key={t.id} className="card-wrapper swiper-wrapper">
+          <SwiperSlide>
+            <div key={t.id} className="card-wrapper swiper-wrapper">
             <div className="card-slider swiper-slide">
               <div className={styles.imageContent}>
                 <span className={styles.overlay}></span>
@@ -74,6 +76,7 @@ function Testimonial() {
               </div>
             </div>
           </div>
+          </SwiperSlide>
         );
       })}
     </>
