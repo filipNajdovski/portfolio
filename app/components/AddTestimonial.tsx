@@ -52,7 +52,6 @@ function AddTestimonial() {
         placeholder="Add photo (Optional)"
         onChange={handleChange}
         className="border p-2 w-full rounded"
-        required
       />
       <input
         type="text"
