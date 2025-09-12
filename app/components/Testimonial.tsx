@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 type TestimonialData = {
   name: string
   company: string
-  companyPhoto: string
+  companyPhoto?: string
   feedback: string
 }
 
@@ -41,7 +41,7 @@ function Testimonial() {
         // Determine image path: use companyPhoto if valid, else fallback
         const photoSrc = t.companyPhoto
           ? `/images/${t.companyPhoto}` // for local testing
-          : "/default-review.png";
+          : "/images/default-review.png";
 
         return (
           <div key={t.id} className="card-wrapper swiper-wrapper">
