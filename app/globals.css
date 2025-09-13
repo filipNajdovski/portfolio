@@ -57,16 +57,24 @@ body {
 }
 
 section {
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   width: 100vw;
-  height: 100.1vh;
-}
-
-section.intro{
-  background-image: url('../images/background/background-blue-tech-desktop-01.png');
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
+}
+
+section:nth-child(odd){
+   background-image: url('../images/background/background-blue-tech-desktop-01.png');
+}
+
+section:nth-child(even){
+  background-image: url('../images/background/background-blue-tech-desktop-01-flipped.png');
+}
+
+section.intro{
   position: relative;
   display: flex;
   align-items: center;
@@ -86,13 +94,6 @@ section.intro{
   white-space: nowrap;
   overflow: hidden;
   transform: translate(-45px, -45px);    
-}
-
-section.portfolio {
-  background-image: url('../images/background/background-blue-tech-desktop-01-flipped.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .portfolio {  display: grid;
@@ -121,7 +122,7 @@ section.portfolio {
 .education { grid-area: education; }
 
 section.keypoints{
-  background-image: url('../images/background/background-blue-tech-desktop-01.png');
+  /* background-image: url('../images/background/background-blue-tech-desktop-01.png'); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -173,13 +174,6 @@ section.keypoints{
   width: 100%;
 }
 
-section.clients{
-  background-image: url('../images/background/background-blue-tech-desktop-01-flipped.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 
 
 /* Mobile devices */
@@ -189,10 +183,19 @@ section.clients{
     scroll-snap-align: start;
     width: 100vw;
     height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  section:nth-child(odd){
+    background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
+  }
+
+  section:nth-child(even){
+    background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
   }
 
 section.intro{
-  background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -203,7 +206,6 @@ section.intro{
 }
   
 section.portfolio {
-  background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -233,7 +235,6 @@ section.portfolio {
 .education { grid-area: education; }
 
 section.keypoints{
-  background-image: url("../images/background/background-blue-tech-mobile-01.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -246,7 +247,6 @@ section.keypoints{
 }
 
 section.clients{
-  background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -261,10 +261,20 @@ section.clients{
     scroll-snap-align: start;
     width: 100vw;
     height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  section:nth-child(odd){
+    background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
+  }
+
+  section:nth-child(even){
+    background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
   }
 
   section.intro{
-    background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -275,7 +285,6 @@ section.clients{
   }  
     
   section.portfolio {
-    background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -307,7 +316,6 @@ section.clients{
   .education { grid-area: education; }
   
   section.keypoints{
-    background-image: url("../images/background/background-blue-tech-mobile-01.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -318,9 +326,6 @@ section.clients{
     grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
     gap: 0.75rem;
   }
-  
-  
-  
   
   section.clients{
     background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');

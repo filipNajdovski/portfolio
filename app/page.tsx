@@ -93,15 +93,17 @@ export default function Home() {
 
         <section className="keypoints">
           <Keypoints />
-          
         </section>
 
-        <section className="clients p-3 lg:p-8">          
+        <section className="projects p-3 lg:p-8">          
           <Projects />
         </section>
 
-        <section className="clients p-3 lg:p-8">
+        <section className="p-3 lg:p-8">
           <Testimonials />
+        </section>
+
+        <section className="reviews p-3 lg:p-8">
           <AddTestimonial />
         </section>
     </main>
