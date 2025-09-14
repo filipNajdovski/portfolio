@@ -47,265 +47,106 @@ const TabComponent = () => {
   return (
     <div>
       <div className={styles.tabs}>
-        <button className={styles.tab} onClick={() => handleTabClick('frontEnd')}>Front End Technologies</button>
-        <button className={styles.tab} onClick={() => handleTabClick('backEnd')}>Back End Technologies</button>
-        <button className={styles.tab} onClick={() => handleTabClick('webDesign')}>Web Degin UI / UX</button>
-        <button className={styles.tab} onClick={() => handleTabClick('testing')}>Testing Automation / Manual</button>
+        <button
+          className={`${styles.tab} ${activeTab === "frontEnd" ? styles.active : ""}`}
+          onClick={() => handleTabClick("frontEnd")}
+        >
+          Front End Technologies
+        </button>
+        <button
+          className={`${styles.tab} ${activeTab === "backEnd" ? styles.active : ""}`}
+          onClick={() => handleTabClick("backEnd")}
+        >
+          Back End Technologies
+        </button>
+        <button
+          className={`${styles.tab} ${activeTab === "webDesign" ? styles.active : ""}`}
+          onClick={() => handleTabClick("webDesign")}
+        >
+          Web Design UI / UX
+        </button>
+        <button
+          className={`${styles.tab} ${activeTab === "testing" ? styles.active : ""}`}
+          onClick={() => handleTabClick("testing")}
+        >
+          Testing Automation / Manual
+        </button>
       </div>
       <div className={styles.tabContent}>
-        {activeTab === 'frontEnd' && 
-        <div className={styles.tabPane}>
-          <div className="tech-icons gap-2 grid">
+  <div
+    className={`${styles.tabPane} ${
+      activeTab === "frontEnd" ? styles.active : ""
+    }`}
+  >
+    {/* Frontend techs */}
+    <div className="tech-icons  justify-content grid">
+      <Card text="HTML" icon={htmlIcon} altText="HTML Icon" progress="100" />
+      <Card text="CSS" icon={cssIcon} altText="CSS Icon" progress="90" />
+      <Card text="JavaScript" icon={javaScriptIcon} altText="JavaScript Icon" progress="80" />
+      <Card text="TypeScript" icon={typeScriptIcon} altText="TypeScript Icon" progress="80" />
+      <Card text="React" icon={reactIcon} altText="React Icon" progress="70" />
+      <Card text="NextJS" icon={nextJsIcon} altText="NextJS Icon" progress="70" />
+      <Card text="Vue.js" icon={vueIcon} altText="Vue JS Icon" progress="50" />
+      <Card text="Angular" icon={angularIcon} altText="Angular Icon" progress="50" />
+      <Card text="Tailwind CSS" icon={tailwindCssIcon} altText="TailwindCSS Icon" progress="80" />
+      <Card text="Materialize CSS" icon={materializeCssIcon} altText="MaterializeCSS Icon" progress="60" />
+      <Card text="Bootstrap CSS" icon={bootstrapIcon} altText="BootstrapCSS Icon" progress="60" />
+      <Card text="PostCSS" icon={postCssIcon} altText="PostCSS Icon" progress="90" />
+    </div>
+  </div>
 
-            <Card 
-              text='HTML'
-              icon={htmlIcon}
-              altText='HTML Icon'
-              progress='100'
-            />
+  <div
+    className={`${styles.tabPane} ${
+      activeTab === "backEnd" ? styles.active : ""
+    }`}
+  >
+    {/* Backend techs */}
+    <div className="tech-icons gap-2 grid">
+      <Card text="PHP" icon={phpIcon} altText="PHP Icon" progress="60" />
+      <Card text="Node JS" icon={nodeJsIcon} altText="node.js Icon" progress="60" />
+      <Card text="Laravel" icon={laravelIcon} altText="Laravel Icon" progress="60" />
+      <Card text="CodeIgniter" icon={codeIgniter} altText="CodeIgniter Icon" progress="50" />
+      <Card text="GraphQL" icon={graphQlIcon} altText="GraphQL Icon" progress="70" />
+      <Card text="Express JS" icon={expressJsIcon} altText="ExpressJS Icon" progress="70" />
+      <Card text="npm" icon={npmIcon} altText="NPM Icon" progress="80" />
+      <Card text="MySQL" icon={mySqlIcon} altText="MySQL Icon" progress="80" />
+      <Card text="PostgreSQL" icon={postgresSqlIcon} altText="PostreSQL Icon" progress="50" />
+      <Card text="MariaDB" icon={mariaDbIcon} altText="MariaDB Icon" progress="80" />
+      <Card text="MongoDB" icon={mongoDbIcon} altText="MongoDB Icon" progress="80" />
+      <Card text="FireBase" icon={firebaseIcon} altText="FireBase Icon" progress="70" />
+      <Card text="WordPress" icon={wordPressIcon} altText="WordPress Icon" progress="80" />
+    </div>
+  </div>
 
-            <Card 
-              text='CSS'
-              icon={cssIcon}
-              altText='CSS Icon'
-              progress='90'
-            />
+  <div
+    className={`${styles.tabPane} ${
+      activeTab === "webDesign" ? styles.active : ""
+    }`}
+  >
+    {/* Web design techs */}
+    <div className="tech-icons gap-2 grid">
+      <Card text="Figma" icon={figma} altText="Figma Icon" progress="80" />
+      <Card text="Adobe Photoshop" icon={photoshop} altText="Adobe Photoshop Icon" progress="60" />
+      <Card text="Adobe Illustrator" icon={illustrator} altText="Adobe Illustrator Icon" progress="60" />
+      <Card text="Adobe After Effects" icon={afterEffectsIcon} altText="Adobe After Effects Icon" progress="50" />
+    </div>
+  </div>
 
-            <Card 
-              text='JavaScript'
-              icon={javaScriptIcon}
-              altText='JavaScript Icon'
-              progress='80'
-            />
+  <div
+    className={`${styles.tabPane} ${
+      activeTab === "testing" ? styles.active : ""
+    }`}
+  >
+    {/* Testing techs */}
+    <div className="tech-icons gap-2 grid">
+      <Card text="Postman" icon={postmanIcon} altText="Postman Icon" progress="80" />
+      <Card text="Cypress JS" icon={cypressIcon} altText="CypressIo Icon" progress="70" />
+      <Card text="Mocha" icon={mochaIcon} altText="Mocha Icon" progress="60" />
+      <Card text="Jest" icon={jestIcon} altText="Jest Icon" progress="60" />
+    </div>
+  </div>
+</div>
 
-            <Card 
-              text='TypeScript'
-              icon={typeScriptIcon}
-              altText='TypeScript Icon'
-              progress='80'
-            />
-
-            <Card 
-              text='React'
-              icon={reactIcon}
-              altText='React Icon'
-              progress='70'
-            />
-
-            <Card 
-              text='NextJS'
-              icon={nextJsIcon}
-              altText='NextJS Icon'
-              progress='70'
-            />
-
-            <Card 
-              text='Vue.js'
-              icon={vueIcon}
-              altText='Vue JS Icon'
-              progress='50'
-            />
-
-            <Card 
-              text='Angular'
-              icon={angularIcon}
-              altText='Angular Icon'
-              progress='50'
-            />
-
-            <Card 
-              text='Tailwind CSS'
-              icon={tailwindCssIcon}
-              altText='TailwindCSS Icon'
-              progress='80'
-            />
-
-            <Card 
-              text='Materialize CSS'
-              icon={materializeCssIcon}
-              altText='MaterializeCSS Icon'
-              progress='60'
-            />
-
-            <Card 
-              text='Bootstrap CSS'
-              icon={bootstrapIcon}
-              altText='BootstrapCSS Icon'
-              progress='60'
-            />
-
-            <Card 
-              text='PostCSS'
-              icon={postCssIcon}
-              altText='PostCSS Icon'
-              progress='90'
-            />
-          </div>
-        </div>
-        }
-        {activeTab === 'backEnd' && 
-          <div className={styles.tabPane}>
-            <div className="tech-icons gap-2 grid">
-              <Card 
-                text='PHP'
-                icon={phpIcon}
-                altText='PHP Icon'
-                progress='60'
-              />
-
-              <Card 
-                text='Node JS'
-                icon={nodeJsIcon}
-                altText='node.js Icon'
-                progress='60'
-              />
-
-              <Card 
-                text='Laravel'
-                icon={laravelIcon}
-                altText='Laravel Icon'
-                progress='60'
-              />
-
-              <Card 
-                text='CodeIgniter'
-                icon={codeIgniter}
-                altText='CodeIgniter Icon'
-                progress='50'
-              />
-
-              <Card 
-                text='GraphQL'
-                icon={graphQlIcon}
-                altText='GraphQL Icon'
-                progress='70'
-              />
-
-              <Card 
-                text='Express JS'
-                icon={expressJsIcon}
-                altText='ExpressJS Icon'
-                progress='70'
-              />
-
-              <Card 
-                text='npm'
-                icon={npmIcon}
-                altText='NPM Icon'
-                progress='80'
-              />
-
-              <Card 
-                text='MySQL'
-                icon={mySqlIcon}
-                altText='MySQL Icon'
-                progress='80'
-              />
-
-              <Card 
-                text='PostgreSQL'
-                icon={postgresSqlIcon}
-                altText='PostreSQL Icon'
-                progress='50'
-              />
-
-              <Card 
-                text='MariaDB'
-                icon={mariaDbIcon}
-                altText='MariaDB Icon'
-                progress='80'
-              />
-
-              <Card 
-                text='MongoDB'
-                icon={mongoDbIcon}
-                altText='MongoDB Icon'
-                progress='80'
-              />
-              <Card 
-                text='FireBase'
-                icon={firebaseIcon}
-                altText='FireBase Icon'
-                progress='70'
-              />
-              <Card 
-                text='WordPress'
-                icon={wordPressIcon}
-                altText='WordPress Icon'
-                progress='80'
-              />
-
-            </div>
-          </div>
-        }
-        {activeTab === 'webDesign' && 
-          <div className={styles.tabPane}>
-            <div className="tech-icons gap-2 grid">
-              <Card 
-                text='Figma'
-                icon={figma}
-                altText='Figma Icon'
-                progress='80'
-              />
-
-              <Card 
-                text='Adobe Photoshop'
-                icon={photoshop}
-                altText='Adobe Photoshop Icon'
-                progress='60'
-              />
-
-              <Card 
-                text='Adobe Illustrator'
-                icon={illustrator}
-                altText='Adobe Illustrator Icon'
-                progress='60'
-              />
-
-              <Card 
-                text='Adobe After Effects'
-                icon={afterEffectsIcon}
-                altText='Adobe After Effects Icon'
-                progress='50'
-              />
-            </div>
-          </div>
-        }
-        {activeTab === 'testing' && 
-          <div className={styles.tabPane}>
-            <div className="tech-icons gap-2 grid">
-              <Card 
-                text='Postman'
-                icon={postmanIcon}
-                altText='Postman Icon'
-                progress='80'
-              />
-
-              <Card 
-                text='Cypress JS'
-                icon={cypressIcon}
-                altText='CypressIo Icon'
-                progress='70'
-              />
-
-              <Card 
-                text='Mocha'
-                icon={mochaIcon}
-                altText='Mocha Icon'
-                progress='60'
-              />
-
-              <Card 
-                text='Jest'
-                icon={jestIcon}
-                altText='Jest Icon'
-                progress='60'
-              />
-
-            </div>
-          </div>
-        }
-      </div>
     </div>
   );
 };

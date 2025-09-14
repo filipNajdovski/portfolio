@@ -34,7 +34,7 @@ const Card = ({icon, text, altText, progress}: CardProps) => {
             <div className={`w-full h-full absolute ${styles.backCard}`}>
                 <h3 className="text-xs lg:text-sm font-semibold text-white">{text}</h3>
                 <div className={`relative ${styles.techProgress}`}>
-                    <div className={`bg-[#9ed1c4] h-full w-${progress} flex justify-center items-center text-sm`}>
+                    <div className={`bg-[#26415E] h-full w-${progress} flex justify-center items-center text-sm`}>
                         <p className={styles.progress}>{progress}%</p>
                     </div>
                 </div>

@@ -23,7 +23,7 @@
 }
 
 .tab.active {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.3);
   border-bottom: 2px solid #000;
   font-weight: bold;
   color: #e5bb89
@@ -35,9 +35,14 @@
   border-top: none;
 }
 
-.tabPane.active {
-  display: block;
+.tabPane {
+  display: none; /* hide all panes by default */
 }
+
+.tabPane.active {
+  display: block; /* only active one is visible */
+}
+
   
   /* Mobile devices */
 @media only screen and (max-width: 480px) {
@@ -81,8 +86,12 @@
     border-top: none;
   }
   
+  .tabPane {
+    display: none; /* hide all panes by default */
+  }
+
   .tabPane.active {
-    display: block;
+    display: block; /* only active one is visible */
   }
 
 

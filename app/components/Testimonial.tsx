@@ -14,6 +14,7 @@ type TestimonialData = {
   company: string
   companyPhoto?: string
   feedback: string
+  rating: number
 }
 
 function Testimonial() {
@@ -80,8 +81,9 @@ function Testimonial() {
                 <div className={styles.cardContent}>
                   <span className={styles.contentOverlay}></span>
                   <h2 className={styles.name}>{t.name}</h2>
+                  <h3 className={styles.company}>{t.company}</h3>
                   <div className="stars inline-flex">
-                    {[...Array(5)].map((_, i) => (
+                    {[...Array(t.rating)].map((_, i) => (
                       <span key={i}>
                         <Image src={star} width={15} height={15} alt={"star"} />
                       </span>
