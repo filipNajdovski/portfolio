@@ -72,9 +72,7 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-center text-white mb-6">Get in Touch</h2>
-      
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">      
       <input
         type="text"
         name="name"
