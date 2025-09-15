@@ -74,11 +74,18 @@ const GlobeComponent = () => {
           "--text-color": "#999999",
           "--point-color": "#ffffff"
         }}
-        data-location="27 17.5813"
+        data-locations="
+          41.0314 21.3347 Bitola,
+          47.3769 8.5417 Zurich,
+          -37.8136 144.9631 Melbourne,
+          52.3759 9.7320 Hannover,
+          52.5200 13.4050 Berlin,
+          35.1856 33.3823 Nicosia
+        "
         data-version="21"
         data-state={dataState} 
         className={dataState === 'complete' ? 'complete' : ''}
-      >
+      >       
       </hyper-globe>
       <style jsx>{`
         @media (max-width: 768px) {
