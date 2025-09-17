@@ -14,7 +14,7 @@ const Projects = () => {
   return (
     <div className="projects">
         <h3 className=" text-[#e5bb89] text-lg font-bold py-1 lg:py-3">Projects</h3>
-        <p className="text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">I'm determined to respect my client's privacy, only my own projects are advertised on this website. Unless a previous agreement is made your page <strong>WILL NOT</strong> be shown here.</p>
+        <p className="text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">I am determined to respect my client's privacy, only my own projects are advertised on this website. Unless a previous agreement is made your page <strong>WILL NOT</strong> be shown here.</p>
 
         <div className={styles.projectsScroll}>
           <Swiper 
