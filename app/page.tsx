@@ -12,8 +12,7 @@ import ContactIcons from "./components/ContactIcons";
 export default function Home() {
   return (
     <main className="main-render">
-        <section className="intro">
-          
+        <section className="intro">          
           <GlobeComponent />
         </section>
 

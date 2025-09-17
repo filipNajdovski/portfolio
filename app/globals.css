@@ -50,7 +50,7 @@ body {
 }
 
 .main-render {
-  scroll-snap-type: block mandatory;
+  /* scroll-snap-type: block mandatory; */
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
