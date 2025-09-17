@@ -52,7 +52,7 @@ body {
 .main-render {
   /* scroll-snap-type: block mandatory; */
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   overflow-x: hidden;
 }
 
@@ -186,71 +186,73 @@ section.keypoints{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
   }
   section:nth-child(odd){
-    background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
+    background-image: url('../images/background/background-blue-tech-mobile-01.png');
   }
 
   section:nth-child(even){
     background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
   }
 
-section.intro{
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  section.intro{
+    background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-#my-globe{
-  height: 53vh !important;
-}
-  
-section.portfolio {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  #my-globe{
+    height: 53vh !important;
+  }
+    
+  section.portfolio {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-.portfolio {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "profile-picture title title"
-    "summary summary summary"
-    "experience experience experience"
-    "education education education"
-    "certificates certificates certificates";
-}
+  .portfolio {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "profile-picture title title"
+      "summary summary summary"
+      "experience experience experience"
+      "education education education"
+      "certificates certificates certificates";
+  }
 
-.profile-picture { grid-area: profile-picture; }
+  .profile-picture { grid-area: profile-picture; }
 
-.title { grid-area: title; }
+  .title { grid-area: title; }
 
-.summary { grid-area: summary; }
+  .summary { grid-area: summary; }
 
-.experience { grid-area: experience; }
+  .experience { grid-area: experience; }
 
-.certificates { grid-area: certificates; }
+  .certificates { grid-area: certificates; }
 
-.education { grid-area: education; }
+  .education { grid-area: education; }
 
-section.keypoints{
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  section.keypoints{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
-.tech-icons {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-  gap: 0.75rem;
-}
+  .tech-icons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 0.75rem;
+  }
 
-section.clients{
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  section.clients{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
 }
 
