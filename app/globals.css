@@ -269,7 +269,7 @@ section.keypoints{
   }
 
   section:nth-child(odd){
-    background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
+    background-image: url('../images/background/background-blue-tech-mobile-01.png');
   }
 
   section:nth-child(even){
@@ -277,6 +277,7 @@ section.keypoints{
   }
 
   section.intro{
+    background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -330,7 +331,6 @@ section.keypoints{
   }
   
   section.clients{
-    background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -5,66 +5,50 @@ const ProgressBar = () => {
     const [hasAttemptedMinimize, setHasAttemptedMinimize] = useState(false);
 
     useEffect(() => {
-        const mainRenderElement = document.querySelector('.main-render');
-        if (!mainRenderElement) return;
+        // Function to encourage browser UI minimization
+        const minimizeBrowserUI = () => {
+            if (!hasAttemptedMinimize) {
+                // Try to trigger browser UI minimization
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: window.pageYOffset + 10,
+                        behavior: 'smooth'
+                    });
+                    
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: window.pageYOffset - 10,
+                            behavior: 'smooth'
+                        });
+                        setHasAttemptedMinimize(true);
+                    }, 100);
+                }, 500);
+            }
+        };
 
-        const handleScroll = (e: Event) => {
-            const target = e.target as HTMLElement;
-            let maxTop = 0;
-            const sections = document.querySelectorAll('.main-render > section');
-            const sectionsCount = sections.length;
-            
-            sections.forEach(section => {
-                maxTop += section.clientHeight;
-            });
-
-            const currentTop = target.scrollTop;
-            const surplus = currentTop / (sectionsCount - 1);
-            const scrollPercentage = ((currentTop + surplus) / maxTop) * 100;
+        const handleScroll = () => {
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (window.scrollY / totalHeight) * 100;
 
             const myBar = document.getElementById("myBar");
             if (myBar) {
-                myBar.style.width = scrollPercentage + "%";
+                myBar.style.width = progress + "%";
             }
 
             // Try to minimize browser UI when user starts scrolling
-            if (currentTop > 10 && !hasAttemptedMinimize) {
+            if (window.scrollY > 10 && !hasAttemptedMinimize) {
                 minimizeBrowserUI();
-                setHasAttemptedMinimize(true);
             }
-        };
-
-        // Function to encourage browser UI minimization
-        const minimizeBrowserUI = () => {
-            // Try to trigger browser UI minimization by scrolling slightly
-            setTimeout(() => {
-                mainRenderElement.scrollTo({
-                    top: mainRenderElement.scrollTop + 10,
-                    behavior: 'auto'
-                });
-                
-                setTimeout(() => {
-                    mainRenderElement.scrollTo({
-                        top: mainRenderElement.scrollTop - 10,
-                        behavior: 'auto'
-                    });
-                }, 50);
-            }, 100);
         };
 
         // Try to minimize browser UI on initial load
-        setTimeout(() => {
-            if (!hasAttemptedMinimize) {
-                minimizeBrowserUI();
-                setHasAttemptedMinimize(true);
-            }
-        }, 1000);
+        setTimeout(minimizeBrowserUI, 1000);
 
-        mainRenderElement.addEventListener("scroll", handleScroll, { passive: true });
+        window.addEventListener("scroll", handleScroll, { passive: true });
 
-        // Cleanup event listener on component unmount
+        // Cleanup
         return () => {
-            mainRenderElement.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, [hasAttemptedMinimize]);
 

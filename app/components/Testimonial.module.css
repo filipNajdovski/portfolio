@@ -96,6 +96,13 @@
   line-height: 1.25rem;
   color: #000;
   text-align: center;
+  display: -webkit-box;
+  overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 7;
+           line-clamp: 7;
+   -webkit-box-orient: vertical;
 }
 .button{
   border: none;
