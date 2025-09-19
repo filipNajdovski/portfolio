@@ -41,10 +41,11 @@
 }
 
 .nav-item {
-  padding: 10px 16px;
+  padding: 14px 16px;
   cursor: pointer;
   font-weight: 500;
   font-size: 0.9rem;
+  line-height: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
   transition: color 0.3s ease;
   position: relative;
@@ -117,7 +118,8 @@
 
 @media (max-width: 640px) {
   .nav-item {
-    padding: 8px 12px;
+    padding: 10px 12px;
     font-size: 0.8rem;
+    line-height: 0.8rem;
   }
 }

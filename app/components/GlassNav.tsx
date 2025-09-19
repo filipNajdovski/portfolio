@@ -185,6 +185,7 @@ const GlassNav = () => {
           cursor: pointer;
           font-weight: 500;
           font-size: 0.9rem;
+          line-height: 0.9rem;
           color: rgba(255, 255, 255, 0.8);
           transition: color 0.3s ease;
           position: relative;
@@ -195,6 +196,7 @@ const GlassNav = () => {
         }
 
         .nav-item.active {
+          color: #e5bb89;
           font-weight: 600;
           background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(12px);
@@ -259,6 +261,7 @@ const GlassNav = () => {
           .nav-item {
             padding: 8px 12px;
             font-size: 0.8rem;
+            line-height: 0.8rem;
           }
         }
       `}</style>

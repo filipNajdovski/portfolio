@@ -27,7 +27,7 @@ body {
 .progress-header {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 9999;
   width: 100%;
   background-color: #00103b;
 }
@@ -180,6 +180,7 @@ section.keypoints{
 @media only screen and (max-width: 480px) {
   .main-render{
     scroll-snap-type: none;
+    height: 100%;
   }
 
   section {
@@ -263,6 +264,7 @@ section.keypoints{
 @media only screen and (max-width: 768px) {
   .main-render{
     scroll-snap-type: none;
+    height: 100%;
   }
 
   section {
