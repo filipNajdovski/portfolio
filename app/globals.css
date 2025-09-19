@@ -57,7 +57,7 @@ body {
 }
 
 section {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   width: 100vw;
   height: 100vh;
   background-position: center;
@@ -183,7 +183,7 @@ section.keypoints{
   }
 
   section {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     width: 100vw;
     height: 100vh;
     background-position: center;
@@ -266,7 +266,7 @@ section.keypoints{
   }
 
   section {
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     width: 100vw;
     height: 100vh;
     background-position: center;
