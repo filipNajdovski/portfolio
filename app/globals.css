@@ -50,9 +50,9 @@ body {
 }
 
 .main-render {
-  /* scroll-snap-type: block mandatory; */
+  scroll-snap-type: block mandatory;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   overflow-x: hidden;
 }
 
@@ -178,6 +178,9 @@ section.keypoints{
 
 /* Mobile devices */
 @media only screen and (max-width: 480px) {
+  .main-render{
+    scroll-snap-type: none;
+  }
 
   section {
     scroll-snap-align: start;
@@ -258,6 +261,9 @@ section.keypoints{
 
 /* Tablets or iPad */
 @media only screen and (max-width: 768px) {
+  .main-render{
+    scroll-snap-type: none;
+  }
 
   section {
     scroll-snap-align: start;

@@ -8,15 +8,18 @@ import DownloadButton from "./components/DownloadButton";
 import AddTestimonial from "./components/AddTestimonial";
 import ContactForm from "./components/ContactForm";
 import ContactIcons from "./components/ContactIcons";
+import GlassNav from "./components/GlassNav";
 
 export default function Home() {
   return (
-    <main className="main-render">
-        <section className="intro">          
+    <>
+      <GlassNav />
+      <main className="main-render">
+        <section id="intro" className="intro">          
           <GlobeComponent />
         </section>
 
-        <section className="portfolio p-3 lg:p-8">
+        <section id="about" className="portfolio p-3 lg:p-8">
           {/* Profile Picture */}
           <div className="profile-picture flex justify-center items-center">
             <Image
@@ -92,19 +95,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="keypoints">
+        <section id="keypoints" className="keypoints">
           <Keypoints />
         </section>
 
-        <section className="projects p-3 lg:p-8">          
+        <section id="projects" className="projects p-3 lg:p-8">          
           <Projects />
         </section>
 
-        <section className="clients p-3 lg:p-8">
+        <section id="clients" className="clients p-3 lg:p-8">
           <Testimonials />
         </section>
 
-        <section className="reviews p-3 lg:p-8">
+        <section id="reviews" className="reviews p-3 lg:p-8">
            <div className="testimonials py-1 lg:py-3">
               <h3 className=" text-[#e5bb89] text-lg font-bold">Write your review</h3>
               <p className="text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">Know Filip? If you have collaborated with Filip please leave a descriptionative review. All reviews are appreciated, transparancy in the work is the best approach!</p>
@@ -115,7 +118,7 @@ export default function Home() {
           
         </section>
 
-        <section className="contact p-3 lg:p-8">
+        <section id="contact" className="contact p-3 lg:p-8">
            <div className="contact-me py-1 lg:py-3">
               <h3 className=" text-[#e5bb89] text-lg font-bold">Contact me!</h3>
               <p className="text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">Have a question or want to work together? Feel free to reach out using the form below.</p>
@@ -128,6 +131,8 @@ export default function Home() {
             </div>
           
         </section>
-    </main>
+      </main>
+    </>
+    
   );
 }
