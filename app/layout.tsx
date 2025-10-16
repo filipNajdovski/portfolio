@@ -52,7 +52,7 @@ export default function RootLayout({
 
         <Header />
         
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<p>Thinking...</p>}>
           {children}
         </Suspense>
         
