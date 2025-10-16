@@ -7,15 +7,15 @@ import Script from "next/script";
 import Loading from "./loading";
 
 export const metadata: Metadata = {
-  title: "Filip Najdovski - Building Dynamic Websites",
-  description: "I design and develop modern web apps and websites tailored to your needs, offering seamless UI/UX design and data-driven solutions to elevate your brand and business.",
+  title: "Filip Najdovski - Tailored Web Solutions for your needs",
+  description: "I design and develop modern web / mobile apps and websites tailored to your needs, offering seamless UI/UX design and data-driven solutions to elevate your brand and business.",
   twitter: {
     card: "summary_large_image",
-    title: "Filip Najdovski - Building Dynamic Websites",
-    description: "I design and develop modern web apps and websites tailored to your needs, offering seamless UI/UX design and data-driven solutions to elevate your brand and business.",
+    title: "Filip Najdovski - Tailored Web Solutions for your needs",
+    description: "I design and develop modern web / mobile apps and websites tailored to your needs, offering seamless UI/UX design and data-driven solutions to elevate your brand and business.",
     images: [
       {
-        url: "https://www.najdovski.tech/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffilip-logo.c7f6815e.png&w=384&q=75",
+        url: "https://www.najdovski.solutions/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffilip-logo.c7f6815e.png&w=384&q=75",
         width: 456, // Optional: specify image dimensions
         height: 555, // Optional: specify image dimensions
         alt: "Najdovski Technologies and Software Development", // Optional: image alt text
@@ -23,16 +23,16 @@ export const metadata: Metadata = {
     ], // Use an array for the image URL(s)
   },
   openGraph: {
-    title: "Filip Najdovski - Building Dynamic Websites",
-    description: "I design and develop modern web apps and websites tailored to your needs, offering seamless UI/UX design and data-driven solutions to elevate your brand and business.",
-    url: "https://www.najdovski.tech/",
-    siteName: "Najdovski Technologies - Building Dynamic Websites",
+    title: "Filip Najdovski - Tailored Web Solutions for your needs",
+    description: "I design and develop modern web / mobile apps and websites tailored to your needs, offering seamless UI/UX design and data-driven solutions to elevate your brand and business.",
+    url: "https://www.najdovski.solutions/",
+    siteName: "Najdovski Solutions - Tailored Web Solutions for your needs",
     images: [
       {
         url: "https://www.najdovski.tech/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffilip-logo.c7f6815e.png&w=384&q=75",
         width: 456, // Optional: specify image dimensions
         height: 555, // Optional: specify image dimensions
-        alt: "Najdovski Technologies and Software Development", // Optional: image alt text
+        alt: "Najdovski Solutions for Software Development", // Optional: image alt text
       },
     ],
   },
