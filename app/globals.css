@@ -21,7 +21,8 @@
 }
 
 body {
-  font-family: "Anonymous Pro", monospace;;
+  overflow: hidden;
+  margin: 0;
 }
 
 .progress-header {
@@ -50,14 +51,17 @@ body {
 }
 
 .main-render {
-  scroll-snap-type: block mandatory;
+  scroll-snap-type: y mandatory;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
+  overflow-y: auto; /* Ensure it's scrollable */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
+
 section {
-  scroll-snap-align: center;
+  scroll-snap-align: start; /* Use 'start' instead of 'center' for better progress calculation */
   width: 100vw;
   height: 100vh;
   background-position: center;
@@ -178,30 +182,32 @@ section.keypoints{
 
 /* Mobile devices */
 @media only screen and (max-width: 480px) {
-  .main-render{
+  .main-render {
     scroll-snap-type: none;
     height: 100%;
+    overflow-y: scroll; /* Allow natural scrolling on mobile */
   }
 
   section {
-    scroll-snap-align: center;
-    width: 100vw;
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+    scroll-snap-align: none;
+    min-height: 100vh; /* Use min-height instead of fixed height */
+    height: auto;
   }
+  
+  body {
+    overflow: auto; /* Allow body scrolling on mobile */
+  }
+
   section:nth-child(odd){
-    background-image: url('../images/background/background-blue-tech-mobile-01.png');
+    background-image: url('../images/background/background-blue-tech-mobile-01.webp');
   }
 
   section:nth-child(even){
-    background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
+    background-image: url('../images/background/background-blue-tech-mobile-01-flipped.webp');
   }
 
   section.intro{
-    background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
+    background-image: url('../images/background/background-blue-tech-mobile-intro-01.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -262,30 +268,32 @@ section.keypoints{
 
 /* Tablets or iPad */
 @media only screen and (max-width: 768px) {
-  .main-render{
+  .main-render {
     scroll-snap-type: none;
     height: 100%;
+    overflow-y: scroll; /* Allow natural scrolling on mobile */
   }
 
   section {
-    scroll-snap-align: center;
-    width: 100vw;
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    scroll-snap-align: none;
+    min-height: 100vh; /* Use min-height instead of fixed height */
+    height: auto;
+  }
+  
+  body {
+    overflow: auto; /* Allow body scrolling on mobile */
   }
 
   section:nth-child(odd){
-    background-image: url('../images/background/background-blue-tech-mobile-01.png');
+    background-image: url('../images/background/background-blue-tech-mobile-01.webp');
   }
 
   section:nth-child(even){
-    background-image: url('../images/background/background-blue-tech-mobile-01-flipped.png');
+    background-image: url('../images/background/background-blue-tech-mobile-01-flipped.webp');
   }
 
   section.intro{
-    background-image: url('../images/background/background-blue-tech-mobile-intro-01.png');
+    background-image: url('../images/background/background-blue-tech-mobile-intro-01.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
