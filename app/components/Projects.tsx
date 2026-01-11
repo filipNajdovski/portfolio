@@ -38,7 +38,7 @@ const Projects = () => {
             </SwiperSlide>
 
             <SwiperSlide>
-              <Project image={nedvizniniOnline} altText='Nedviznini Online' link='https://www.nedviznini.online/' />
+              <Project image={nedvizniniOnline} altText='Nedviznini Online' link='https://real-estate-marketplace-git-main-filip-najdovskis-projects.vercel.app/' />
             </SwiperSlide>
 
             <SwiperSlide>
