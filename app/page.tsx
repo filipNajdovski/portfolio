@@ -37,7 +37,7 @@ export default function Home() {
               Filip Najdovski
             </h1>
             <h2 className="text-xl text-white font-semibold text-center">
-              Front End Developer & Web Consultant
+              Full Stack Developer & Web Consultant
             </h2>
           </div>
 
