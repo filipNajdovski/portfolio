@@ -39,14 +39,18 @@ const GOLD_MARKER =
 // The hyper-globe element builds one Marker/Text per slotted child, reading
 // `data-location` ("lat lon") and `title` off each. A `data-locations` attribute
 // on the host is not part of its API and is ignored.
+// Six of the seven cities sit in Europe/the Med and their labels collide at this
+// globe scale, so each text gets its own --text-position / --text-offset to fan
+// it clear of its neighbours. Both vars are read per text element, not just off
+// the host. position is [x, y] direction; x === 0 centres the label.
 const LOCATIONS = [
-  { name: 'Bitola', lat: 41.0314, lon: 21.3347 },
-  { name: 'Zurich', lat: 47.3769, lon: 8.5417 },
-  { name: 'Melbourne', lat: -37.8136, lon: 144.9631 },
-  { name: 'Hannover', lat: 52.3759, lon: 9.7320 },
-  { name: 'Berlin', lat: 52.5200, lon: 13.4050 },
-  { name: 'Nicosia', lat: 35.1856, lon: 33.3823 },
-  { name: 'Malta', lat: 35.8997, lon: 14.5147 },
+  { name: 'Hannover', lat: 52.3759, lon: 9.7320, pos: '-1 -1', off: 0.9 },
+  { name: 'Berlin', lat: 52.5200, lon: 13.4050, pos: '1 -1', off: 0.9 },
+  { name: 'Zurich', lat: 47.3769, lon: 8.5417, pos: '-1 0', off: 0.6 },
+  { name: 'Bitola', lat: 41.0314, lon: 21.3347, pos: '1 0', off: 0.6 },
+  { name: 'Malta', lat: 35.8997, lon: 14.5147, pos: '-1 1', off: 0.7 },
+  { name: 'Nicosia', lat: 35.1856, lon: 33.3823, pos: '1 1', off: 0.7 },
+  { name: 'Melbourne', lat: -37.8136, lon: 144.9631, pos: '0 1', off: 0.5 },
 ];
 
 const GlobeComponent = () => {
@@ -178,6 +182,7 @@ const GlobeComponent = () => {
             slot="texts"
             data-location={`${l.lat} ${l.lon}`}
             title={l.name}
+            style={{ '--text-position': l.pos, '--text-offset': String(l.off) }}
           />
         ))}
       </hyper-globe>
