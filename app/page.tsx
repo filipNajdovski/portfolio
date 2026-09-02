@@ -110,7 +110,7 @@ export default function Home() {
         <section id="reviews" className="reviews p-3 lg:p-8">
            <div className="testimonials py-1 lg:py-3">
               <h3 className=" text-[#e5bb89] text-lg font-bold">Write your review</h3>
-              <p className="text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">Know Filip? If you have collaborated with Filip please leave a descriptionative review. All reviews are appreciated, transparancy in the work is the best approach!</p>
+              <p className="text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">Know Filip? If you have collaborated with Filip please leave a descriptive review. All reviews are appreciated, transparency in the work is the best approach!</p>
               <div className="testimonial">
                 <AddTestimonial />
               </div>

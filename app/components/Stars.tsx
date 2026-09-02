@@ -16,7 +16,11 @@ const STAR_PATH =
   'M12 1.6l3.09 6.26 6.91 1-5 4.87 1.18 6.87L12 17.77l-6.18 3.25L7 14.15l-5-4.87 6.91-1z';
 
 const FILLED = '#e5bb89';
-const EMPTY = 'rgba(229, 187, 137, 0.28)';
+// Empty stars get the glass treatment rather than flat faded gold, which read
+// as a dim gold star instead of an absent one: near-transparent fill plus a
+// thin gold-tinted outline.
+const EMPTY = 'rgba(255, 255, 255, 0.08)';
+const EMPTY_STROKE = 'rgba(229, 187, 137, 0.38)';
 
 const Stars = ({ value, total = 5, size = 15, className, label }: StarsProps) => {
   const clamped = Math.max(0, Math.min(total, Number.isFinite(value) ? value : 0));
@@ -53,6 +57,10 @@ const Stars = ({ value, total = 5, size = 15, className, label }: StarsProps) =>
             <path
               d={STAR_PATH}
               fill={fill >= 1 ? FILLED : fill <= 0 ? EMPTY : `url(#${gradientId})`}
+              // outline only where the star isn't fully earned, so full stars
+              // stay clean and empties read as unfilled glass
+              stroke={fill >= 1 ? 'none' : EMPTY_STROKE}
+              strokeWidth={fill >= 1 ? 0 : 1}
             />
           </svg>
         );
