@@ -10,6 +10,158 @@
   --champagne: #daccb1;
   --light-gray: #d9ded8;
   --dark-grey: #182428;
+
+  /* Champagne gold — the single accent colour: section headings, globe markers
+     and city labels, star ratings, and the call-to-action buttons. */
+  --accent: #e5bb89;
+  --accent-bright: #f3d3ac;
+  --ground: #001028;
+
+  /* One glass material, shared by the nav, the form fields and the buttons.
+     Previously this recipe lived only inside GlassNav's styled-jsx, so nothing
+     else could reuse it. */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-blur: 12px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- glass material ---------- */
+
+.glass {
+  /* opaque-ish fallback first, for browsers without backdrop-filter */
+  background: rgba(10, 25, 55, 0.72);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+  }
+}
+
+/* Readability panel behind body copy sitting on the busy mesh background.
+   Replaces the flat bg-slate-900/[0.6] boxes so the text plates match the rest
+   of the glass — a touch more opaque than .glass, since legibility over the
+   bright cyan nodes matters more here than translucency. */
+.glass-panel {
+  border-radius: 12px;
+  background: rgba(4, 18, 45, 0.66);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-panel {
+    background: rgba(4, 18, 45, 0.42);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Square-ish glass surface for the contact tiles. */
+.glass-tile {
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-tile {
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+  }
+}
+
+.glass-tile:hover {
+  background: rgba(229, 187, 137, 0.14);
+  border-color: rgba(229, 187, 137, 0.5);
+  transform: translateY(-3px);
+}
+
+.glass-input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 12px;
+  color: #ffffff;
+  background: rgba(10, 25, 55, 0.55);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-input {
+    background: rgba(255, 255, 255, 0.07);
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+  }
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: rgba(229, 187, 137, 0.65);
+  box-shadow: 0 0 0 3px rgba(229, 187, 137, 0.18);
+}
+
+/* Gold-on-glass call to action, replacing the stock bg-blue-600 buttons. */
+.glass-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  color: var(--accent);
+  background: rgba(229, 187, 137, 0.08);
+  border: 1px solid rgba(229, 187, 137, 0.45);
+  box-shadow: var(--glass-shadow);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+    transform 0.08s ease;
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-button {
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+  }
+}
+
+.glass-button:hover:not(:disabled) {
+  background: rgba(229, 187, 137, 0.16);
+  border-color: rgba(229, 187, 137, 0.75);
+  color: var(--accent-bright);
+}
+
+.glass-button:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.glass-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(229, 187, 137, 0.3);
+}
+
+.glass-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.7);
+  border-color: var(--glass-border);
+  background: var(--glass-bg);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,8 +172,15 @@
   }
 }
 
+html,
 body {
-  overflow: hidden;
+  /* guard: nothing should ever be able to scroll the page sideways */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-y: hidden;
   margin: 0;
 }
 
@@ -52,7 +211,11 @@ body {
 
 .main-render {
   scroll-snap-type: y mandatory;
-  width: 100vw;
+  /* 100% not 100vw: 100vw includes the vertical scrollbar, so with classic
+     (space-taking) scrollbars every full-width element ends up ~15px wider
+     than the content area and the page scrolls sideways. Browsers with overlay
+     scrollbars hide the bug, which is why it only shows in some of them. */
+  width: 100%;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: auto; /* Ensure it's scrollable */
@@ -62,12 +225,39 @@ body {
 
 section {
   scroll-snap-align: start; /* Use 'start' instead of 'center' for better progress calculation */
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+}
+
+/* Content used to sit flush at the top of each 100vh section, leaving 50-65% of
+   the screen empty on desktop. Centre it vertically instead. `.portfolio` is a
+   CSS grid and `.intro` is already a flex centre, so both opt out. */
+section:not(.portfolio):not(.intro) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Section padding lives here, not as `p-3 lg:p-8` utilities in page.tsx.
+   Those are class selectors and outranked the element-level rule below, so the
+   nav gutter silently applied to only the one section that had no padding
+   utility. Keeping it in one place means the gutter can't be overridden
+   per-section by accident. `.intro` is full-bleed for the globe. */
+section:not(.intro) {
+  padding: 0.75rem;
+}
+
+/* The desktop glass nav is fixed at right: 2rem with z-index 1000 and was
+   overlapping section content — the third testimonial card's text ran under it
+   and the LinkedIn tile sat behind it. Reserve the gutter. */
+@media only screen and (min-width: 1024px) {
+  section:not(.intro) {
+    padding: 2rem 11rem 2rem 2rem;
+  }
 }
 
 section:nth-child(odd){
@@ -138,45 +328,11 @@ section.keypoints{
   gap: 1rem;
 }
 
-.w-10 {
-  width: 10%;
-}
-
-.w-20 {
-  width: 20%;
-}
-
-.w-30 {
-  width: 30%;
-}
-
-.w-40 {
-  width: 40%;
-}
-
-.w-50 {
-  width: 50%;
-}
-
-.w-60 {
-  width: 60%;
-}
-
-.w-70 {
-  width: 70%;
-}
-
-.w-80 {
-  width: 80%;
-}
-
-.w-90 {
-  width: 90%;
-}
-
-.w-100 {
-  width: 100%;
-}
+/* NOTE: .w-10 ... .w-100 percentage classes used to live here to drive the tech
+   cards' progress bars. They came after @tailwind utilities and so overrode
+   Tailwind's own w-* scale at equal specificity — w-20 on a card resolved to
+   20% instead of 5rem. The bars are star ratings now (see Stars.tsx), so the
+   classes are gone and Tailwind's scale is intact. Don't reintroduce them. */
 
 
 
@@ -195,7 +351,8 @@ section.keypoints{
   }
   
   body {
-    overflow: auto; /* Allow body scrolling on mobile */
+    overflow-y: auto; /* Allow body scrolling on mobile — y only, so the
+       horizontal guard above stays in force */
   }
 
   section:nth-child(odd){
@@ -225,7 +382,11 @@ section.keypoints{
 
   .portfolio {  display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 0px 0px;
+    /* min-content rows: the default 1fr rows stretched each block to an equal
+       share and opened a large gap between Experience and Education. */
+    grid-auto-rows: min-content;
+    align-content: start;
+    gap: 0.5rem 0;
     grid-template-areas:
       "profile-picture title title"
       "summary summary summary"
@@ -281,7 +442,8 @@ section.keypoints{
   }
   
   body {
-    overflow: auto; /* Allow body scrolling on mobile */
+    overflow-y: auto; /* Allow body scrolling on mobile — y only, so the
+       horizontal guard above stays in force */
   }
 
   section:nth-child(odd){

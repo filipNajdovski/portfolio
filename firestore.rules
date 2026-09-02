@@ -1,0 +1,40 @@
+rules_version = '2';
+
+// Publish from the Firebase console (Firestore Database -> Rules -> Publish),
+// or with: firebase deploy --only firestore:rules
+//
+// The review form is unauthenticated, so `create` cannot require auth without
+// breaking it. Instead every submitted document is pinned to an exact, bounded
+// shape, and reviews are immutable once written.
+//
+// These bounds are mirrored in app/components/AddTestimonial.tsx — change both
+// together, or valid submissions start failing with permission-denied.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isValidTestimonial(d) {
+      return d.keys().hasOnly(['name', 'company', 'companyPhoto', 'feedback', 'rating'])
+        && d.keys().hasAll(['name', 'feedback', 'rating'])
+        && d.name is string     && d.name.size() >= 2      && d.name.size() <= 60
+        && d.feedback is string && d.feedback.size() >= 10  && d.feedback.size() <= 1000
+        && d.rating is int      && d.rating >= 1            && d.rating <= 5
+        && (!d.keys().hasAny(['company'])
+             || (d.company is string && d.company.size() <= 80))
+        && (!d.keys().hasAny(['companyPhoto'])
+             || d.companyPhoto == '/images/default-review.png');
+    }
+
+    match /testimonials/{id} {
+      // Public: these render on the homepage.
+      allow read: if true;
+
+      // Anyone may submit, but only in the exact shape above. hasOnly blocks
+      // arbitrary extra fields being appended to the document.
+      allow create: if isValidTestimonial(request.resource.data);
+
+      // Immutable once submitted. The console bypasses rules, so moderation
+      // and deletion still happen there.
+      allow update, delete: if false;
+    }
+  }
+}

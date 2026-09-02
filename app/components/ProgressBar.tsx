@@ -1,82 +1,65 @@
 "use client"
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
+/**
+ * Scroll progress bar.
+ *
+ * Two scroll modes have to be handled, and which one is live depends on the
+ * breakpoint (see globals.css): on desktop `.main-render` is the scroll
+ * container (scroll-snap); below 768px it collapses to `height: 100%` and the
+ * document scrolls instead.
+ *
+ * Both reduce to the same ratio against whichever element actually scrolls, so
+ * there is no need to walk sections and accumulate heights — the previous
+ * implementation did, and fell through its own loop at the bottom of the page,
+ * resetting the index to 0 and running the bar backwards exactly when it should
+ * have read 100%.
+ */
 const ProgressBar = () => {
     useEffect(() => {
-        const handleScroll = () => {
-            // Get the scroll container (try multiple elements)
-            let scrollContainer: HTMLElement | null = document.querySelector('.main-render');
-            
-            // If main-render doesn't have scroll, check body
-            if (!scrollContainer || scrollContainer.scrollHeight === scrollContainer.clientHeight) {
-                scrollContainer = document.documentElement || document.body;
+        const getScrollState = () => {
+            const container = document.querySelector<HTMLElement>('.main-render');
+            // the container only scrolls when it is actually overflowing; on
+            // mobile scrollHeight === clientHeight and the document scrolls
+            const usesContainer =
+                !!container && container.scrollHeight > container.clientHeight + 1;
+
+            if (usesContainer && container) {
+                return {
+                    scrolled: container.scrollTop,
+                    max: container.scrollHeight - container.clientHeight,
+                };
             }
 
-            const sections = document.querySelectorAll('section');
-            const sectionsCount = sections.length;
-            
-            // Calculate total scrollable height
-            let totalHeight = 0;
-            sections.forEach(section => {
-                totalHeight += section.clientHeight;
-            });
-
-            // Get current scroll position
-            const currentScroll = scrollContainer.scrollTop || document.documentElement.scrollTop || document.body.scrollTop;
-            
-            // Calculate viewport height
-            const viewportHeight = window.innerHeight;
-            
-            // Calculate progress based on current section and scroll within section
-            let progress = 0;
-            
-            if (sectionsCount > 0) {
-                // Method 1: Calculate based on which section is in view
-                let currentSectionIndex = 0;
-                let accumulatedHeight = 0;
-                
-                for (let i = 0; i < sectionsCount; i++) {
-                    accumulatedHeight += sections[i].clientHeight;
-                    if (currentScroll < accumulatedHeight) {
-                        currentSectionIndex = i;
-                        break;
-                    }
-                }
-                
-                // Calculate progress within current section
-                const sectionStart = currentSectionIndex > 0 ? 
-                    accumulatedHeight - sections[currentSectionIndex].clientHeight : 0;
-                const sectionProgress = (currentScroll - sectionStart) / sections[currentSectionIndex].clientHeight;
-                
-                // Overall progress
-                progress = (currentSectionIndex + sectionProgress) / sectionsCount;
-                
-                // Alternative Method 2: Simple scroll percentage
-                // progress = currentScroll / (totalHeight - viewportHeight);
-            }
-
-            const myBar = document.getElementById("myBar");
-            if (myBar) {
-                myBar.style.width = `${Math.min(progress * 100, 100)}%`;
-            }
+            return {
+                scrolled: window.scrollY,
+                max: document.documentElement.scrollHeight - window.innerHeight,
+            };
         };
 
-        // Try multiple scroll containers
-        const mainRenderElement = document.querySelector('.main-render');
-        const scrollTarget = mainRenderElement || window;
+        const handleScroll = () => {
+            const bar = document.getElementById('myBar');
+            if (!bar) return;
 
-        scrollTarget.addEventListener("scroll", handleScroll, { passive: true });
-        
-        // Also listen for resize to recalculate
-        window.addEventListener("resize", handleScroll, { passive: true });
-        
-        // Initial calculation
+            const { scrolled, max } = getScrollState();
+            const progress = max > 0 ? Math.min(1, Math.max(0, scrolled / max)) : 0;
+
+            bar.style.width = `${progress * 100}%`;
+        };
+
+        // Bound to both: which element scrolls flips at the breakpoint, and
+        // re-evaluating per event means a resize across it needs no reload.
+        const container = document.querySelector<HTMLElement>('.main-render');
+        container?.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        window.addEventListener('resize', handleScroll, { passive: true });
+
         handleScroll();
 
-        // Cleanup
         return () => {
-            scrollTarget.removeEventListener("scroll", handleScroll);
-            window.removeEventListener("resize", handleScroll);
+            container?.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleScroll);
         };
     }, []);
 

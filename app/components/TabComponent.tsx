@@ -80,18 +80,18 @@ const TabComponent = () => {
   >
     {/* Frontend techs */}
     <div className="tech-icons  justify-content grid">
-      <Card text="HTML" icon={htmlIcon} altText="HTML Icon" progress="100" />
-      <Card text="CSS" icon={cssIcon} altText="CSS Icon" progress="90" />
-      <Card text="JavaScript" icon={javaScriptIcon} altText="JavaScript Icon" progress="80" />
-      <Card text="TypeScript" icon={typeScriptIcon} altText="TypeScript Icon" progress="80" />
-      <Card text="React" icon={reactIcon} altText="React Icon" progress="70" />
-      <Card text="NextJS" icon={nextJsIcon} altText="NextJS Icon" progress="70" />
-      <Card text="Vue.js" icon={vueIcon} altText="Vue JS Icon" progress="50" />
-      <Card text="Angular" icon={angularIcon} altText="Angular Icon" progress="50" />
-      <Card text="Tailwind CSS" icon={tailwindCssIcon} altText="TailwindCSS Icon" progress="80" />
-      <Card text="Materialize CSS" icon={materializeCssIcon} altText="MaterializeCSS Icon" progress="60" />
-      <Card text="Bootstrap CSS" icon={bootstrapIcon} altText="BootstrapCSS Icon" progress="60" />
-      <Card text="PostCSS" icon={postCssIcon} altText="PostCSS Icon" progress="90" />
+      <Card text="HTML" icon={htmlIcon} altText="HTML Icon" progress={100} />
+      <Card text="CSS" icon={cssIcon} altText="CSS Icon" progress={90} />
+      <Card text="JavaScript" icon={javaScriptIcon} altText="JavaScript Icon" progress={80} />
+      <Card text="TypeScript" icon={typeScriptIcon} altText="TypeScript Icon" progress={80} />
+      <Card text="React" icon={reactIcon} altText="React Icon" progress={70} />
+      <Card text="NextJS" icon={nextJsIcon} altText="NextJS Icon" progress={70} />
+      <Card text="Vue.js" icon={vueIcon} altText="Vue JS Icon" progress={50} />
+      <Card text="Angular" icon={angularIcon} altText="Angular Icon" progress={50} />
+      <Card text="Tailwind CSS" icon={tailwindCssIcon} altText="TailwindCSS Icon" progress={80} />
+      <Card text="Materialize CSS" icon={materializeCssIcon} altText="MaterializeCSS Icon" progress={60} />
+      <Card text="Bootstrap CSS" icon={bootstrapIcon} altText="BootstrapCSS Icon" progress={60} />
+      <Card text="PostCSS" icon={postCssIcon} altText="PostCSS Icon" progress={90} />
     </div>
   </div>
 
@@ -102,19 +102,19 @@ const TabComponent = () => {
   >
     {/* Backend techs */}
     <div className="tech-icons gap-2 grid">
-      <Card text="PHP" icon={phpIcon} altText="PHP Icon" progress="60" />
-      <Card text="Node JS" icon={nodeJsIcon} altText="node.js Icon" progress="60" />
-      <Card text="Laravel" icon={laravelIcon} altText="Laravel Icon" progress="60" />
-      <Card text="CodeIgniter" icon={codeIgniter} altText="CodeIgniter Icon" progress="50" />
-      <Card text="GraphQL" icon={graphQlIcon} altText="GraphQL Icon" progress="70" />
-      <Card text="Express JS" icon={expressJsIcon} altText="ExpressJS Icon" progress="70" />
-      <Card text="npm" icon={npmIcon} altText="NPM Icon" progress="80" />
-      <Card text="MySQL" icon={mySqlIcon} altText="MySQL Icon" progress="80" />
-      <Card text="PostgreSQL" icon={postgresSqlIcon} altText="PostreSQL Icon" progress="50" />
-      <Card text="MariaDB" icon={mariaDbIcon} altText="MariaDB Icon" progress="80" />
-      <Card text="MongoDB" icon={mongoDbIcon} altText="MongoDB Icon" progress="80" />
-      <Card text="FireBase" icon={firebaseIcon} altText="FireBase Icon" progress="70" />
-      <Card text="WordPress" icon={wordPressIcon} altText="WordPress Icon" progress="80" />
+      <Card text="PHP" icon={phpIcon} altText="PHP Icon" progress={60} />
+      <Card text="Node JS" icon={nodeJsIcon} altText="node.js Icon" progress={60} />
+      <Card text="Laravel" icon={laravelIcon} altText="Laravel Icon" progress={60} />
+      <Card text="CodeIgniter" icon={codeIgniter} altText="CodeIgniter Icon" progress={50} />
+      <Card text="GraphQL" icon={graphQlIcon} altText="GraphQL Icon" progress={70} />
+      <Card text="Express JS" icon={expressJsIcon} altText="ExpressJS Icon" progress={70} />
+      <Card text="npm" icon={npmIcon} altText="NPM Icon" progress={80} />
+      <Card text="MySQL" icon={mySqlIcon} altText="MySQL Icon" progress={80} />
+      <Card text="PostgreSQL" icon={postgresSqlIcon} altText="PostreSQL Icon" progress={50} />
+      <Card text="MariaDB" icon={mariaDbIcon} altText="MariaDB Icon" progress={80} />
+      <Card text="MongoDB" icon={mongoDbIcon} altText="MongoDB Icon" progress={80} />
+      <Card text="FireBase" icon={firebaseIcon} altText="FireBase Icon" progress={70} />
+      <Card text="WordPress" icon={wordPressIcon} altText="WordPress Icon" progress={80} />
     </div>
   </div>
 
@@ -125,10 +125,10 @@ const TabComponent = () => {
   >
     {/* Web design techs */}
     <div className="tech-icons gap-2 grid">
-      <Card text="Figma" icon={figma} altText="Figma Icon" progress="80" />
-      <Card text="Adobe Photoshop" icon={photoshop} altText="Adobe Photoshop Icon" progress="60" />
-      <Card text="Adobe Illustrator" icon={illustrator} altText="Adobe Illustrator Icon" progress="60" />
-      <Card text="Adobe After Effects" icon={afterEffectsIcon} altText="Adobe After Effects Icon" progress="50" />
+      <Card text="Figma" icon={figma} altText="Figma Icon" progress={80} />
+      <Card text="Adobe Photoshop" icon={photoshop} altText="Adobe Photoshop Icon" progress={60} />
+      <Card text="Adobe Illustrator" icon={illustrator} altText="Adobe Illustrator Icon" progress={60} />
+      <Card text="Adobe After Effects" icon={afterEffectsIcon} altText="Adobe After Effects Icon" progress={50} />
     </div>
   </div>
 
@@ -139,10 +139,10 @@ const TabComponent = () => {
   >
     {/* Testing techs */}
     <div className="tech-icons gap-2 grid">
-      <Card text="Postman" icon={postmanIcon} altText="Postman Icon" progress="80" />
-      <Card text="Cypress JS" icon={cypressIcon} altText="CypressIo Icon" progress="70" />
-      <Card text="Mocha" icon={mochaIcon} altText="Mocha Icon" progress="60" />
-      <Card text="Jest" icon={jestIcon} altText="Jest Icon" progress="60" />
+      <Card text="Postman" icon={postmanIcon} altText="Postman Icon" progress={80} />
+      <Card text="Cypress JS" icon={cypressIcon} altText="CypressIo Icon" progress={70} />
+      <Card text="Mocha" icon={mochaIcon} altText="Mocha Icon" progress={60} />
+      <Card text="Jest" icon={jestIcon} altText="Jest Icon" progress={60} />
     </div>
   </div>
 </div>

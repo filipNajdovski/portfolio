@@ -1,6 +1,6 @@
 import styles from './Testimonial.module.css';
 import Image from "next/image";
-import star from "./../../images/icons/star.svg";
+import Stars from './Stars';
 import { db } from '@/firebaseConfig';
 import { collection, getDocs, QueryDocumentSnapshot, DocumentData } from "firebase/firestore";
 import { useEffect, useState } from 'react';
@@ -23,7 +23,6 @@ function Testimonial() {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.count("fetchData Called")
     const querySnapshot = await getDocs(collection(db, "testimonials"));
 
     const data = querySnapshot.docs.map((doc: QueryDocumentSnapshot<DocumentData>) => {
@@ -34,7 +33,6 @@ function Testimonial() {
     };
     });
 
-    console.log("Fetched testimonials:", data);
     setTestimonials(data);
   };
 
@@ -51,8 +49,6 @@ function Testimonial() {
           768: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {testimonials.map((t) => {
           const photoSrc = t.companyPhoto?.startsWith("/images/")
@@ -82,13 +78,8 @@ function Testimonial() {
                   <span className={styles.contentOverlay}></span>
                   <h2 className={styles.name}>{t.name}</h2>
                   <h3 className={styles.company}>{t.company}</h3>
-                  <div className="stars inline-flex">
-                    {[...Array(t.rating)].map((_, i) => (
-                      <span key={i}>
-                        <Image src={star} width={15} height={15} alt={"star"} />
-                      </span>
-                    ))}
-                  </div>
+                  {/* always 5 stars, filled to the rating, so a 3 reads as 3 of 5 */}
+                  <Stars value={t.rating} size={15} label={`${t.name} rated ${t.rating} out of 5`} />
                   <p className={styles.description}>{t.feedback}</p>
                 </div>
               </div>

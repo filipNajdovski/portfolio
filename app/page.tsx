@@ -19,7 +19,7 @@ export default function Home() {
           <GlobeComponent />
         </section>
 
-        <section id="about" className="portfolio p-3 lg:p-8">
+        <section id="about" className="portfolio">
           {/* Profile Picture */}
           <div className="profile-picture flex justify-center items-center">
             <Image
@@ -44,7 +44,7 @@ export default function Home() {
           {/* About Me Section */}
           <div className="summary">
             <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">About Me</h3>
-            <p className="lg:text-base text-xs text-white bg-slate-900/[0.6] p-1 rounded-md shadow-md">
+            <p className="lg:text-base text-xs text-white glass-panel p-2">
               Full-Stack JavaScript Developer with 4+ years of experience building
               scalable web applications using React, Next.js, Vue.js, Node.js, and modern
               databases SQL & NoSQL. Skilled in designing, developing, testing, and
@@ -99,18 +99,18 @@ export default function Home() {
           <Keypoints />
         </section>
 
-        <section id="projects" className="projects p-3 lg:p-8">          
+        <section id="projects" className="projects">          
           <Projects />
         </section>
 
-        <section id="clients" className="clients p-3 lg:p-8">
+        <section id="clients" className="clients">
           <Testimonials />
         </section>
 
-        <section id="reviews" className="reviews p-3 lg:p-8">
+        <section id="reviews" className="reviews">
            <div className="testimonials py-1 lg:py-3">
               <h3 className=" text-[#e5bb89] text-lg font-bold">Write your review</h3>
-              <p className="text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">Know Filip? If you have collaborated with Filip please leave a descriptionative review. All reviews are appreciated, transparancy in the work is the best approach!</p>
+              <p className="text-white text-xs lg:text-sm glass-panel p-2 mb-5">Know Filip? If you have collaborated with Filip please leave a descriptive review. All reviews are appreciated, transparency in the work is the best approach!</p>
               <div className="testimonial">
                 <AddTestimonial />
               </div>
@@ -118,14 +118,14 @@ export default function Home() {
           
         </section>
 
-        <section id="contact" className="contact p-3 lg:p-8">
+        <section id="contact" className="contact">
            <div className="contact-me py-1 lg:py-3">
               <h3 className=" text-[#e5bb89] text-lg font-bold">Contact me!</h3>
-              <p className="text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">Have a question or want to work together? Feel free to reach out using the form below.</p>
+              <p className="text-white text-xs lg:text-sm glass-panel p-2 mb-5">Have a question or want to work together? Feel free to reach out using the form below.</p>
               <div className="contact-components">
                 <ContactForm />
                 <h3 className=" text-[#e5bb89] text-lg font-bold">Reach out individually</h3>
-                <p className="text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">Feel free to give me a call 9am-7pm(CET) any working day if you have any questions or would like to discuss options, you can get in touch by different methods</p>
+                <p className="text-white text-xs lg:text-sm glass-panel p-2 mb-5">Feel free to give me a call 9am-7pm(CET) any working day if you have any questions or would like to discuss options, you can get in touch by different methods</p>
                 <ContactIcons />
               </div>
             </div>

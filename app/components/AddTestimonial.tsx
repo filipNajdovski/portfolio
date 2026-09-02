@@ -2,71 +2,102 @@
 import { useState } from "react"
 import { db } from "../../firebaseConfig"
 import { collection, addDoc } from "firebase/firestore"
+import { Field, SubmitButton, StatusMessage } from './FormControls'
+
+// Kept in step with firestore.rules — the rules reject anything outside these
+// bounds, so validating here turns a permission-denied into a useful message.
+const LIMITS = {
+  name: { min: 2, max: 60 },
+  company: { max: 80 },
+  feedback: { min: 10, max: 1000 },
+};
+
+const DEFAULT_PHOTO = "/images/default-review.png";
 
 function AddTestimonial() {
   const [form, setForm] = useState({
     name: "",
     company: "",
-    companyPhoto: "",
     feedback: "",
-    rating: 0, 
+    rating: 0,
   });
   const [hover, setHover] = useState(0);
-  const [message, setMessage] = useState("");
-
-  const DEFAULT_PHOTO = "/images/default-review.png";
+  const [status, setStatus] = useState<{ tone: 'error' | 'success'; text: string } | null>(null);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (e: any) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-      companyPhoto: form.companyPhoto || DEFAULT_PHOTO,
-    });
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const validate = () => {
+    const name = form.name.trim();
+    const feedback = form.feedback.trim();
+    if (name.length < LIMITS.name.min) return "Please enter your name.";
+    if (name.length > LIMITS.name.max) return `Name must be under ${LIMITS.name.max} characters.`;
+    if (form.company.trim().length > LIMITS.company.max)
+      return `Company must be under ${LIMITS.company.max} characters.`;
+    if (feedback.length < LIMITS.feedback.min)
+      return `Please write at least ${LIMITS.feedback.min} characters of feedback.`;
+    if (feedback.length > LIMITS.feedback.max)
+      return `Feedback must be under ${LIMITS.feedback.max} characters.`;
+    // the rules require 1-5, so a star-less submission would be rejected
+    if (form.rating < 1 || form.rating > 5) return "Please choose a star rating.";
+    return null;
   };
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    const problem = validate();
+    if (problem) {
+      setStatus({ tone: 'error', text: problem });
+      return;
+    }
+
+    setSending(true);
+    setStatus(null);
     try {
-      await addDoc(collection(db, "testimonials"), form);
-      setMessage("Feedback submitted!");
-      setForm({ name: "", company: "", companyPhoto: "", feedback: "", rating: 0 });
+      // built explicitly: the rules use hasOnly, so stray keys are rejected
+      await addDoc(collection(db, "testimonials"), {
+        name: form.name.trim(),
+        company: form.company.trim(),
+        companyPhoto: DEFAULT_PHOTO,
+        feedback: form.feedback.trim(),
+        rating: form.rating,
+      });
+      setStatus({ tone: 'success', text: "Feedback submitted, thank you!" });
+      setForm({ name: "", company: "", feedback: "", rating: 0 });
     } catch (err) {
       console.error("Error adding document: ", err);
-      setMessage("Error, try again.");
+      setStatus({ tone: 'error', text: "Could not submit your review. Please try again." });
+    } finally {
+      setSending(false);
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
-      <input
-        type="text"
+      <Field
         name="name"
         placeholder="Your name"
         value={form.name}
         onChange={handleChange}
-        className="border p-2 w-full rounded"
+        maxLength={LIMITS.name.max}
         required
       />
-      <input
-        type="file"
-        name="photo"
-        onChange={handleChange}
-        className="border p-2 w-full text-white text-xs lg:text-sm text-start bg-slate-900/[0.6] shadow-md mb-5 rounded-md"
-      />
-      <input
-        type="text"
+      <Field
         name="company"
         placeholder="Company"
         value={form.company}
         onChange={handleChange}
-        className="border p-2 w-full rounded"
+        maxLength={LIMITS.company.max}
       />
-      <textarea
+      <Field
         name="feedback"
         placeholder="Your feedback"
         value={form.feedback}
         onChange={handleChange}
-        className="border p-2 w-full rounded"
+        maxLength={LIMITS.feedback.max}
+        rows={5}
         required
       />
 
@@ -76,11 +107,14 @@ function AddTestimonial() {
           <button
             key={star}
             type="button"
+            aria-label={`Rate ${star} out of 5`}
             onClick={() => setForm({ ...form, rating: star })}
             onMouseEnter={() => setHover(star)}
             onMouseLeave={() => setHover(0)}
-            className={`text-3xl transition-colors ${
-              star <= (hover || form.rating) ? "text-yellow-400" : "text-gray-300"
+            className={`text-3xl leading-none transition-colors ${
+              star <= (hover || form.rating)
+                ? "text-[#e5bb89]"
+                : "text-white/20 hover:text-white/35"
             }`}
           >
             ★
@@ -88,13 +122,13 @@ function AddTestimonial() {
         ))}
       </div>
 
-      <div className="text-white text-xs lg:text-sm w-fit text-start bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">Selected rating: {form.rating}</div>
+      <div className="text-white text-xs lg:text-sm w-fit text-start glass-panel p-2">
+        Selected rating: {form.rating}
+      </div>
 
-      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
-        Submit
-      </button>
+      <SubmitButton pending={sending}>Submit review</SubmitButton>
 
-      {message && <p className="mt-2 text-white text-xs lg:text-sm w-fit text-start bg-slate-900/[0.6] shadow-md p-1 mb-5 rounded-md">{message}</p>}
+      {status && <StatusMessage tone={status.tone}>{status.text}</StatusMessage>}
     </form>
   );
 }
