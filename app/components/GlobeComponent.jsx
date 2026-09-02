@@ -119,7 +119,8 @@ const GlobeComponent = () => {
         style={{
           "--preview-color": "#111111",
           margin: "auto",
-          width: "100vw",
+          // 100% not 100vw — 100vw includes the scrollbar and scrolls the page sideways
+          width: "100%",
           height: "85vh",
           position: "relative",
           "--globe-scale": "0.85",
