@@ -1,12 +1,15 @@
 "use client"
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
+import { Field, SubmitButton, StatusMessage } from './FormControls';
 
 interface FormData {
   name: string;
   email: string;
   message: string;
 }
+
+type Status = { tone: 'error' | 'success'; text: string } | null;
 
 export default function ContactForm() {
   const [form, setForm] = useState<FormData>({
@@ -15,7 +18,7 @@ export default function ContactForm() {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<Status>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({
@@ -27,11 +30,11 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setMessage("");
+    setStatus(null);
 
     // Basic validation
     if (!form.name || !form.email || !form.message) {
-      setMessage("Please fill in all fields");
+      setStatus({ tone: 'error', text: "Please fill in all fields" });
       setIsSubmitting(false);
       return;
     }
@@ -39,7 +42,7 @@ export default function ContactForm() {
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(form.email)) {
-      setMessage("Please enter a valid email address");
+      setStatus({ tone: 'error', text: "Please enter a valid email address" });
       setIsSubmitting(false);
       return;
     }
@@ -58,66 +61,44 @@ export default function ContactForm() {
       );
 
       if (result.text === 'OK') {
-        setMessage("Message sent successfully! I'll get back to you soon.");
+        setStatus({ tone: 'success', text: "Message sent successfully! I'll get back to you soon." });
         setForm({ name: "", email: "", message: "" });
       } else {
-        setMessage("Error sending message. Please try again.");
+        setStatus({ tone: 'error', text: "Error sending message. Please try again." });
       }
     } catch (err) {
       console.error("Error sending message: ", err);
-      setMessage("Error sending message. Please try again later.");
+      setStatus({ tone: 'error', text: "Error sending message. Please try again later." });
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">      
-      <input
-        type="text"
-        name="name"
-        placeholder="Your name"
-        value={form.name}
-        onChange={handleChange}
-        className="border p-2 w-full rounded text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md"
-        required
-      />
-      
-      <input
-        type="email"
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
+      <Field name="name" placeholder="Your name" value={form.name} onChange={handleChange} required />
+
+      <Field
         name="email"
+        type="email"
         placeholder="Your email"
         value={form.email}
         onChange={handleChange}
-        className="border p-2 w-full rounded text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md"
         required
       />
-      
-      <textarea
+
+      <Field
         name="message"
         placeholder="Your message"
         value={form.message}
         onChange={handleChange}
         rows={5}
-        className="border p-2 w-full rounded text-white text-xs lg:text-sm bg-slate-900/[0.6] shadow-md"
         required
       />
 
-      <button 
-        type="submit" 
-        disabled={isSubmitting}
-        className="bg-blue-600 text-white px-4 py-2 rounded w-full disabled:bg-blue-400"
-      >
-        {isSubmitting ? "Sending..." : "Send Message"}
-      </button>
+      <SubmitButton pending={isSubmitting}>Send Message</SubmitButton>
 
-      {message && (
-        <div className={`text-white text-xs lg:text-sm w-full text-start bg-slate-900/[0.6] shadow-md p-3 rounded-md ${
-          message.includes("Error") ? "bg-red-900/[0.6]" : "bg-green-900/[0.6]"
-        }`}>
-          {message}
-        </div>
-      )}
+      {status && <StatusMessage tone={status.tone}>{status.text}</StatusMessage>}
     </form>
   );
 }
