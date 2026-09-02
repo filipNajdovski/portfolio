@@ -181,6 +181,33 @@ section {
   overflow: hidden;
 }
 
+/* Content used to sit flush at the top of each 100vh section, leaving 50-65% of
+   the screen empty on desktop. Centre it vertically instead. `.portfolio` is a
+   CSS grid and `.intro` is already a flex centre, so both opt out. */
+section:not(.portfolio):not(.intro) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Section padding lives here, not as `p-3 lg:p-8` utilities in page.tsx.
+   Those are class selectors and outranked the element-level rule below, so the
+   nav gutter silently applied to only the one section that had no padding
+   utility. Keeping it in one place means the gutter can't be overridden
+   per-section by accident. `.intro` is full-bleed for the globe. */
+section:not(.intro) {
+  padding: 0.75rem;
+}
+
+/* The desktop glass nav is fixed at right: 2rem with z-index 1000 and was
+   overlapping section content — the third testimonial card's text ran under it
+   and the LinkedIn tile sat behind it. Reserve the gutter. */
+@media only screen and (min-width: 1024px) {
+  section:not(.intro) {
+    padding: 2rem 11rem 2rem 2rem;
+  }
+}
+
 section:nth-child(odd){
    background-image: url('../images/background/background-blue-tech-desktop-01.png');
 }
@@ -302,7 +329,11 @@ section.keypoints{
 
   .portfolio {  display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 0px 0px;
+    /* min-content rows: the default 1fr rows stretched each block to an equal
+       share and opened a large gap between Experience and Education. */
+    grid-auto-rows: min-content;
+    align-content: start;
+    gap: 0.5rem 0;
     grid-template-areas:
       "profile-picture title title"
       "summary summary summary"

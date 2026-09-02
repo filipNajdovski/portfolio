@@ -43,6 +43,7 @@ const GlassNav = () => {
 
   useEffect(() => {
     updateSliderPosition();
+    centreActiveItem();
   }, [activeSection]);
 
   const setupIntersectionObserver = () => {
@@ -77,6 +78,25 @@ const GlassNav = () => {
     }
   };
 
+  // The mobile nav is a swipeable mode picker (like the iPhone camera's
+  // photo/video selector). It overflows its 90vw container, so the active item
+  // has to be scrolled to the centre or the later sections sit off-screen with
+  // nothing hinting they exist.
+  const centreActiveItem = () => {
+    const items = document.querySelectorAll<HTMLElement>(
+      `.glass-nav-mobile [data-nav-item][data-id="${activeSection}"]`
+    );
+    items.forEach((item) => {
+      const track = item.parentElement?.parentElement; // .nav-items -> .nav-container
+      if (!track || track.scrollWidth <= track.clientWidth) return;
+      const target = item.offsetLeft + item.offsetWidth / 2 - track.clientWidth / 2;
+      track.scrollTo({
+        left: Math.max(0, Math.min(target, track.scrollWidth - track.clientWidth)),
+        behavior: 'smooth',
+      });
+    });
+  };
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -99,7 +119,7 @@ const GlassNav = () => {
     <>
       {/* Desktop version - positioned on the left */}
       <nav className="glass-nav-desktop">
-        <div className="nav-container">
+        <div className="nav-container glass">
           <div className="slider" style={sliderStyle} />
           <div className="nav-items">
             {navItems.map((item) => (
@@ -119,7 +139,7 @@ const GlassNav = () => {
 
       {/* Mobile version - positioned at bottom center */}
       <nav className="glass-nav-mobile">
-        <div className="nav-container">
+        <div className="nav-container glass">
           <div className="slider" style={sliderStyle} />
           <div className="nav-items">
             {navItems.map((item) => (
@@ -160,16 +180,9 @@ const GlassNav = () => {
           width: auto;
         }
 
+        /* surface comes from the shared .glass class in globals.css */
         .nav-container {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border-radius: 16px;
           padding: 6px;
-          box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.18);
           position: relative;
           overflow: hidden;
         }
@@ -241,19 +254,44 @@ const GlassNav = () => {
         }
 
         @media (max-width: 1023px) {
+          /* iPhone-camera-style mode picker: swipeable, snapping, with the
+             clipped items fading at the edges so it reads as scrollable. */
           .nav-container {
             max-width: 90vw;
             overflow-x: auto;
+            overflow-y: hidden;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            scroll-snap-type: x mandatory;
+            scroll-padding: 0 50%;
+            overscroll-behavior-x: contain;
+            -webkit-overflow-scrolling: touch;
+            -webkit-mask-image: linear-gradient(
+              to right,
+              transparent 0,
+              #000 14%,
+              #000 86%,
+              transparent 100%
+            );
+            mask-image: linear-gradient(
+              to right,
+              transparent 0,
+              #000 14%,
+              #000 86%,
+              transparent 100%
+            );
           }
-          
+
           .nav-container::-webkit-scrollbar {
             display: none;
           }
-          
+
           .nav-items {
             width: max-content;
+          }
+
+          .nav-item {
+            scroll-snap-align: center;
           }
         }
 
