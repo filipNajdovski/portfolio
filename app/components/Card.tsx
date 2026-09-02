@@ -24,7 +24,7 @@ const Card = ({icon, text, altText, progress}: CardProps) => {
 
     
   return (
-    {/* size comes from .cardContainer (100px, 75px on mobile) */}
+    // size comes from .cardContainer (100px, 75px on mobile)
     <div className={`relative ${styles.cardContainer}`} onClick={onClick}>
         <div className={`w-full h-full absolute ${styles.card} ${flipped ? styles.flipped : ''}`}>
             
