@@ -1,52 +1,31 @@
 // components/GlassNav.tsx
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 interface NavItem {
   id: string;
   label: string;
 }
 
+// Module scope: a new array each render would invalidate every callback that
+// depends on it, which is what made the effect dependencies unsatisfiable.
+const NAV_ITEMS: NavItem[] = [
+  { id: 'intro', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'keypoints', label: 'Technologies' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'clients', label: 'Testimonials' },
+  { id: 'reviews', label: 'Feedback' },
+  { id: 'contact', label: 'Contact' }
+];
+
 const GlassNav = () => {
   const [activeSection, setActiveSection] = useState('intro');
   const [sliderStyle, setSliderStyle] = useState({ width: 0, left: 0 });
   const observer = useRef<IntersectionObserver | null>(null);
 
-  const navItems: NavItem[] = [
-    { id: 'intro', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'keypoints', label: 'Technologies' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'clients', label: 'Testimonials' },
-    { id: 'reviews', label: 'Feedback' },
-    { id: 'contact', label: 'Contact' }
-  ];
-
-  useEffect(() => {
-    // Initialize slider position
-    updateSliderPosition();
-    
-    // Setup Intersection Observer to detect which section is in view
-    setupIntersectionObserver();
-    
-    // Handle window resize
-    window.addEventListener('resize', updateSliderPosition);
-
-    return () => {
-      if (observer.current) {
-        observer.current.disconnect();
-      }
-      window.removeEventListener('resize', updateSliderPosition);
-    };
-  }, []);
-
-  useEffect(() => {
-    updateSliderPosition();
-    centreActiveItem();
-  }, [activeSection]);
-
-  const setupIntersectionObserver = () => {
+  const setupIntersectionObserver = useCallback(() => {
     const options = {
       root: null,
       rootMargin: '-20% 0px -60% 0px', // Adjust these values to change when the section becomes active
@@ -62,27 +41,27 @@ const GlassNav = () => {
     }, options);
 
     // Observe all sections
-    navItems.forEach(item => {
+    NAV_ITEMS.forEach(item => {
       const section = document.getElementById(item.id);
       if (section) {
         observer.current?.observe(section);
       }
     });
-  };
+  }, []);
 
-  const updateSliderPosition = () => {
+  const updateSliderPosition = useCallback(() => {
     const activeElement = document.querySelector(`[data-nav-item][data-id="${activeSection}"]`);
     if (activeElement) {
       const { offsetWidth, offsetLeft } = activeElement as HTMLElement;
       setSliderStyle({ width: offsetWidth, left: offsetLeft });
     }
-  };
+  }, [activeSection]);
 
   // The mobile nav is a swipeable mode picker (like the iPhone camera's
   // photo/video selector). It overflows its 90vw container, so the active item
   // has to be scrolled to the centre or the later sections sit off-screen with
   // nothing hinting they exist.
-  const centreActiveItem = () => {
+  const centreActiveItem = useCallback(() => {
     const items = document.querySelectorAll<HTMLElement>(
       `.glass-nav-mobile [data-nav-item][data-id="${activeSection}"]`
     );
@@ -95,7 +74,23 @@ const GlassNav = () => {
         behavior: 'smooth',
       });
     });
-  };
+  }, [activeSection]);
+
+  useEffect(() => {
+    setupIntersectionObserver();
+
+    return () => {
+      observer.current?.disconnect();
+    };
+  }, [setupIntersectionObserver]);
+
+  useEffect(() => {
+    updateSliderPosition();
+    centreActiveItem();
+
+    window.addEventListener('resize', updateSliderPosition);
+    return () => window.removeEventListener('resize', updateSliderPosition);
+  }, [updateSliderPosition, centreActiveItem]);
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -122,7 +117,7 @@ const GlassNav = () => {
         <div className="nav-container glass">
           <div className="slider" style={sliderStyle} />
           <div className="nav-items">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <div
                 key={item.id}
                 data-nav-item
@@ -142,7 +137,7 @@ const GlassNav = () => {
         <div className="nav-container glass">
           <div className="slider" style={sliderStyle} />
           <div className="nav-items">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <div
                 key={item.id}
                 data-nav-item
