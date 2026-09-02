@@ -138,45 +138,11 @@ section.keypoints{
   gap: 1rem;
 }
 
-.w-10 {
-  width: 10%;
-}
-
-.w-20 {
-  width: 20%;
-}
-
-.w-30 {
-  width: 30%;
-}
-
-.w-40 {
-  width: 40%;
-}
-
-.w-50 {
-  width: 50%;
-}
-
-.w-60 {
-  width: 60%;
-}
-
-.w-70 {
-  width: 70%;
-}
-
-.w-80 {
-  width: 80%;
-}
-
-.w-90 {
-  width: 90%;
-}
-
-.w-100 {
-  width: 100%;
-}
+/* NOTE: .w-10 ... .w-100 percentage classes used to live here to drive the tech
+   cards' progress bars. They came after @tailwind utilities and so overrode
+   Tailwind's own w-* scale at equal specificity — w-20 on a card resolved to
+   20% instead of 5rem. The bars are star ratings now (see Stars.tsx), so the
+   classes are gone and Tailwind's scale is intact. Don't reintroduce them. */
 
 
 
