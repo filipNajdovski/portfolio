@@ -77,7 +77,7 @@ const TONE_CLASS: Record<Tone, string> = {
   // explicit tone beats sniffing the copy for the word "Error"
   error: 'bg-red-950/[0.55] border-red-400/40 text-red-100',
   success: 'bg-emerald-950/[0.55] border-emerald-400/40 text-emerald-100',
-  info: 'bg-slate-900/[0.6] border-white/20 text-white',
+  info: 'glass-panel text-white',
 };
 
 export const StatusMessage = ({ tone, children }: { tone: Tone; children: ReactNode }) => (

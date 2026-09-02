@@ -122,7 +122,7 @@ function AddTestimonial() {
         ))}
       </div>
 
-      <div className="text-white text-xs lg:text-sm w-fit text-start bg-slate-900/[0.6] shadow-md p-1 rounded-md">
+      <div className="text-white text-xs lg:text-sm w-fit text-start glass-panel p-2">
         Selected rating: {form.rating}
       </div>
 

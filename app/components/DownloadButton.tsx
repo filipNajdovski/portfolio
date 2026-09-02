@@ -1,11 +1,12 @@
 function DownloadButton() {
   return (
     <div className="my-3">
+      {/* same glass-button treatment as the form submit buttons */}
       <a
         href="/Filip-Najdovski-CV.pdf"
         target="_blank"
         rel="noopener noreferrer"
-        className="px-4 py-2 bg-[#239ae6] text-white rounded-lg hover:bg-[#3b82f6] transition"
+        className="glass-button text-xs lg:text-sm no-underline"
       >
         View CV
       </a>
