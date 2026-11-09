@@ -12,7 +12,7 @@
     border-color: rgba(229, 187, 137, 0.5);
 }
 
-/* Fixed 16:9 frame so all three cards match height regardless of the
+/* Fixed 16:9 frame so all cards match height regardless of the
    screenshots' own dimensions. */
 .frame {
     position: relative;

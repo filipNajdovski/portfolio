@@ -290,30 +290,307 @@ section.intro{
   transform: translate(-45px, -45px);    
 }
 
-.portfolio {  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "profile-picture title title"
-    "summary summary summary"
-    "experience experience experience"
-    "certificates certificates certificates"
-    "education education education";
+/* ---------- About section ----------
+   Card grid. Desktop: profile | experience | education over certificates.
+   Tablet: profile across the top, then two columns. Phone: one column.
+
+   The old layout stacked everything in one left-hand column on desktop (half
+   the screen empty, and Education clipped below 900px tall), and on phones its
+   five equal `1fr` rows were never reset, which opened big gaps between blocks. */
+
+section.portfolio {
+  /* Grow rather than clip: sections are 100vh + overflow:hidden, which cut off
+     Certificates/Education entirely on a 720px-tall laptop. */
+  height: auto;
+  min-height: 100vh;
 }
 
-.profile-picture { grid-area: profile-picture; }
+.portfolio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "profile experience education"
+    "profile experience certificates";
+  gap: 1rem;
+  align-content: center;
+}
 
-.title { grid-area: title; }
+/* Cap the grid at 96rem on very wide screens, centred in the space left of the
+   nav gutter (2rem left / 11rem right, from the section padding rule above). */
+@media only screen and (min-width: 1024px) {
+  section.portfolio {
+    padding-left: max(2rem, calc(50% - 52.5rem));
+    padding-right: max(11rem, calc(50% - 43.5rem));
+  }
+}
 
-.summary { grid-area: summary; }
-
+.about-profile { grid-area: profile; }
 .experience { grid-area: experience; }
-
+.education { grid-area: education; }
 .certificates { grid-area: certificates; }
 
-.education { grid-area: education; }
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-width: 0;
+  padding: 1.25rem 1.35rem;
+  border-radius: 18px;
+}
+
+.about-label {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* profile card */
+
+.about-profile { gap: 1.1rem; }
+
+/* Desktop: photo beside the name keeps the card short enough that the other
+   columns aren't stretched into sparse gaps. Stacked again below 1024px. */
+.about-identity {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.about-photo {
+  flex: 0 0 auto;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(229, 187, 137, 0.85);
+  box-shadow: 0 0 0 6px rgba(229, 187, 137, 0.12), 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.about-name {
+  color: var(--accent);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.about-role {
+  margin-top: 0.35rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.about-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-summary p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* shared list item: bold title over a muted subtitle */
+
+.about-item-title {
+  display: block;
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.about-item-sub {
+  display: block;
+  margin-top: 0.15rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+/* experience timeline — newest is filled.
+   Items grow to share any spare card height (last one excluded), and each
+   draws its own connector from its dot down to the next one, so the line
+   always ends exactly on the last dot however the titles wrap. */
+
+.about-timeline {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1.4rem;
+}
+
+.about-timeline li {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.about-timeline li:last-child { flex: 0 0 auto; }
+
+.about-timeline li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(-1.075rem - 0.5px);
+  top: 0.95rem;
+  bottom: -1.3rem; /* through the 1rem gap to the next dot's top */
+  width: 1px;
+  background: rgba(229, 187, 137, 0.35);
+}
+
+.about-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -1.4rem;
+  top: 0.3rem;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--ground);
+  border: 2px solid rgba(229, 187, 137, 0.7);
+}
+
+.about-timeline li:first-child::before {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(229, 187, 137, 0.18);
+}
+
+/* education */
+
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.about-list li {
+  padding-left: 0.85rem;
+  border-left: 2px solid rgba(229, 187, 137, 0.4);
+}
+
+/* certificates */
+
+/* The pill drops under the course name when the column is too narrow for
+   both, instead of shoving itself past the card edge. */
+.about-certs li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.about-certs li > span:first-child { flex: 1 1 10rem; min-width: 0; }
+.about-certs li:first-child { padding-top: 0; }
+.about-certs li:last-child { padding-bottom: 0; border-bottom: 0; }
+
+.about-pill {
+  flex: 0 0 auto;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(229, 187, 137, 0.35);
+  background: rgba(229, 187, 137, 0.08);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* small laptop: the profile column is too narrow to sit the name beside the
+   photo without "Filip / Najdovski" wrapping, so stack them. */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  .about-identity {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .about-name { font-size: 1.5rem; }
+}
+
+/* tablet: profile spans the top as a two-pane card */
+@media only screen and (max-width: 1023px) {
+  .portfolio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "profile profile"
+      "experience education"
+      "experience certificates";
+    gap: 0.85rem;
+  }
+
+  .about-profile {
+    display: grid;
+    grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .about-identity {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.85rem;
+  }
+
+  .about-photo {
+    width: 112px;
+    height: 112px;
+  }
+
+  .about-summary {
+    padding: 0 0 0 1.5rem;
+    border-top: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* phone: single column */
+@media only screen and (max-width: 640px) {
+  .portfolio {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "profile"
+      "experience"
+      "education"
+      "certificates";
+    gap: 0.75rem;
+  }
+
+  .about-card { padding: 1.1rem; }
+
+  .about-profile {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .about-summary {
+    padding: 1rem 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .about-photo {
+    width: 96px;
+    height: 96px;
+  }
+
+  .about-name { font-size: 1.5rem; }
+  .about-role { font-size: 0.92rem; }
+  .about-summary p { font-size: 0.85rem; }
+}
 
 section.keypoints{
   /* background-image: url('../images/background/background-blue-tech-desktop-01.png'); */
@@ -380,33 +657,6 @@ section.keypoints{
     background-size: cover;
   }
 
-  .portfolio {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    /* min-content rows: the default 1fr rows stretched each block to an equal
-       share and opened a large gap between Experience and Education. */
-    grid-auto-rows: min-content;
-    align-content: start;
-    gap: 0.5rem 0;
-    grid-template-areas:
-      "profile-picture title title"
-      "summary summary summary"
-      "experience experience experience"
-      "education education education"
-      "certificates certificates certificates";
-  }
-
-  .profile-picture { grid-area: profile-picture; }
-
-  .title { grid-area: title; }
-
-  .summary { grid-area: summary; }
-
-  .experience { grid-area: experience; }
-
-  .certificates { grid-area: certificates; }
-
-  .education { grid-area: education; }
-
   section.keypoints{
     background-position: center;
     background-repeat: no-repeat;
@@ -470,31 +720,6 @@ section.keypoints{
     background-repeat: no-repeat;
     background-size: cover;
   }
-  
-  /* .portfolio {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "profile-picture title title"
-      "summary summary summary"
-      "experience experience experience"
-      "certificates certificates certificates"
-      "education education education";
-  } */
-  
-  .profile-picture { grid-area: profile-picture; }
-  
-  .title { grid-area: title; }
-  
-  .summary { grid-area: summary; }
-  
-  .experience { grid-area: experience; }
-  
-  .certificates { grid-area: certificates; }
-  
-  .education { grid-area: education; }
   
   section.keypoints{
     background-position: center;

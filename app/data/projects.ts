@@ -2,6 +2,7 @@ import type { StaticImageData } from 'next/image';
 import nurReinigung from './../../images/projects/nur-reinigung.png';
 import nedvizniniOnline from './../../images/projects/nedviznini.online.screen.png';
 import githubFinder from './../../images/projects/github-finder.png';
+import fahrschuleWest from './../../images/projects/fahrschule-west.jpg';
 
 export type Project = {
   title: string;
@@ -15,6 +16,13 @@ export type Project = {
 // Content lives here rather than inline in Projects.tsx so adding a project is
 // a data edit, not a JSX edit.
 export const PROJECTS: Project[] = [
+  {
+    title: 'Fahrschule West',
+    description: 'Driving school site with course booking — Swiss market, German language',
+    image: fahrschuleWest,
+    altText: 'Fahrschule West homepage with the hero, special-offer banner and booking shortcuts',
+    link: 'https://www.fahrschulewest.ch/',
+  },
   {
     title: 'Nur Reinigung',
     description: 'Cleaning company site — Swiss market, German language',

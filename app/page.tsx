@@ -20,77 +20,75 @@ export default function Home() {
         </section>
 
         <section id="about" className="portfolio">
-          {/* Profile Picture */}
-          <div className="profile-picture flex justify-center items-center">
-            <Image
-              src={profilePic} // Path to your image
-              alt="Filip Najdovski Picture"
-              width={150} // Desired width
-              height={150} // Desired height
-              className="rounded-full border-4 drop-shadow-xl"
-            />
+          {/* Profile card: identity + summary + CV */}
+          <div className="about-card about-profile glass-panel">
+            <div className="about-identity">
+              <Image
+                src={profilePic}
+                alt="Filip Najdovski Picture"
+                width={112}
+                height={112}
+                className="about-photo"
+              />
+              <div>
+                <h1 className="about-name">Filip Najdovski</h1>
+                <h2 className="about-role">Full Stack Developer & Web Consultant</h2>
+              </div>
+            </div>
+
+            <div className="about-summary">
+              <h3 className="about-label">About Me</h3>
+              <p>
+                Full-Stack JavaScript Developer with 6+ years of experience building
+                scalable web applications using React, Next.js, Vue.js, Node.js, and modern
+                databases SQL & NoSQL. Skilled in designing, developing, testing, and
+                deploying applications with a strong focus on clean code and performance
+                optimization. Experienced in API development/integration and automation
+                testing. Passionate about continuous learning and delivering high-quality
+                solutions.
+              </p>
+              <DownloadButton />
+            </div>
           </div>
 
-          {/* Title Section */}
-          <div className="title flex flex-col justify-center gap-2 items-center">
-            <h1 className="lg:text-3xl text-2xl font-bold text-[#e5bb89] text-center">
-              Filip Najdovski
-            </h1>
-            <h2 className="text-xl text-white font-semibold text-center">
-              Full Stack Developer & Web Consultant
-            </h2>
+          {/* Experience — newest first, drawn as a timeline */}
+          <div className="about-card experience glass-panel">
+            <h3 className="about-label">Experience</h3>
+            <ol className="about-timeline">
+              <li><span className="about-item-title">Senior Fullstack Developer</span><span className="about-item-sub">Prime Entertainment Group, Malta</span></li>
+              <li><span className="about-item-title">Full Stack Developer</span><span className="about-item-sub">Innovio Web Consulting</span></li>
+              <li><span className="about-item-title">Web Developer</span><span className="about-item-sub">Freelance</span></li>
+              <li><span className="about-item-title">Front End Developer</span><span className="about-item-sub">Kimicom</span></li>
+              <li><span className="about-item-title">Quality Control / Project Coordinator</span><span className="about-item-sub">Taskforce LLC</span></li>
+              {/* <li><span className="about-item-title">International Project Coordinator / Business Analyst</span><span className="about-item-sub">Media Plus Consulting</span></li> */}
+              {/* <li><span className="about-item-title">Marketing Development</span><span className="about-item-sub">Rothstein International</span></li> */}
+            </ol>
           </div>
 
-          {/* About Me Section */}
-          <div className="summary">
-            <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">About Me</h3>
-            <p className="lg:text-base text-xs text-white glass-panel p-2">
-              Full-Stack JavaScript Developer with 4+ years of experience building
-              scalable web applications using React, Next.js, Vue.js, Node.js, and modern
-              databases SQL & NoSQL. Skilled in designing, developing, testing, and
-              deploying applications with a strong focus on clean code and performance
-              optimization. Experienced in API development/integration and automation
-              testing. Passionate about continuous learning and delivering high-quality
-              solutions.
-            </p>
-            <DownloadButton />
-          </div>
-
-          {/* Experience Section */}
-          <div className="experience">
-            <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Experience</h3>
-            <ul className="lg:text-base text-xs text-gray-300 space-y-2">
-              <li><strong>Full Stack Developer</strong> – Innovio Web Consulting</li>
-              <li><strong>Web Developer</strong> – Freelance</li>
-              <li><strong>Front End Developer</strong> – Kimicom</li>
-              <li><strong>Quality Control / Project Coordinator</strong> – Taskforce LLC</li>
-              {/* <li><strong>International Project Coordinator / Business Analyst</strong> – Media Plus Consulting</li> */}
-              {/* <li><strong>Marketing Development</strong> – Rothstein International</li> */}
+          {/* Education */}
+          <div className="about-card education glass-panel">
+            <h3 className="about-label">Education</h3>
+            <ul className="about-list">
+              <li>
+                <span className="about-item-title">UKLO Computer Science and Communications Engineering</span>
+                <span className="about-item-sub">Bachelor&apos;s Degree</span>
+              </li>
+              <li>
+                <span className="about-item-title">SOTU Gjorgji Naumov</span>
+                <span className="about-item-sub">Technician for Computer Science and Automatics</span>
+              </li>
             </ul>
           </div>
 
-          {/* Certificates Section */}
-          <div className="certificates">
-            <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Certificates</h3>
-            <ul className="lg:text-base text-xs text-gray-300 space-y-2">
-              <li>React Front to Back – Udemy</li>
-              <li>Modern JavaScript From The Beginning (2024) – Udemy</li>
-              <li>20 Web Projects with Vanilla JavaScript – Udemy</li>
-              <li>Full Web Development Path – Codecademy</li>
-              <li>Object Oriented Programming/PHP – Codecademy</li>
-            </ul>
-          </div>
-
-          {/* Education Section */}
-          <div className="education">
-            <h3 className="text-[#e5bb89] text-lg font-bold lg:py-3 py-1">Education</h3>
-            <ul className="lg:text-base text-xs text-gray-300 space-y-2">
-              <li>
-                <strong>UKLO Computer Science and Communications Engineering</strong> – Bachelor&apos;s Degree
-              </li>
-              <li>
-                <strong>SOTU Gjorgji Naumov</strong> – Technician for Computer Science and Automatics
-              </li>
+          {/* Certificates — course name with the provider as a pill */}
+          <div className="about-card certificates glass-panel">
+            <h3 className="about-label">Certificates</h3>
+            <ul className="about-certs">
+              <li><span>React Front to Back</span><span className="about-pill">Udemy</span></li>
+              <li><span>Modern JavaScript From The Beginning (2024)</span><span className="about-pill">Udemy</span></li>
+              <li><span>20 Web Projects with Vanilla JavaScript</span><span className="about-pill">Udemy</span></li>
+              <li><span>Full Web Development Path</span><span className="about-pill">Codecademy</span></li>
+              <li><span>Object Oriented Programming/PHP</span><span className="about-pill">Codecademy</span></li>
             </ul>
           </div>
         </section>
